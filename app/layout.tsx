@@ -18,7 +18,9 @@ function InteractiveSidebar() {
   return (
     <aside className="w-80 bg-gray-50 border-r border-gray-200 overflow-y-auto">
       <div className="p-4">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">All Converters</h2>
+        <Link href="/" className="block hover:text-blue-600 transition-colors">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">All Converters</h2>
+        </Link>
         <nav className="space-y-2">
           {/* Length Conversions */}
           <details className="group">
