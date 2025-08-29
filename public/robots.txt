@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://converthaven.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block admin areas
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all conversion pages
+Allow: /length/
+Allow: /mass/
+Allow: /temperature/
+Allow: /volume/
+Allow: /area/
+Allow: /speed/
+Allow: /energy/
+Allow: /power/
+Allow: /data/
+Allow: /pressure/

@@ -1,0 +1,71 @@
+{
+  "category": {
+    "key": "power",
+    "name": "Power",
+    "description": "Power and energy rate measurements",
+    "icon": "flash"
+  },
+  "units": [
+    {
+      "key": "watt",
+      "label": "watt",
+      "symbol": "W",
+      "dimension": { "L": 2, "M": 1, "T": -3, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1,
+      "system": "SI",
+      "category": "power",
+      "aliases": ["watts"],
+      "allowPrefixes": true
+    },
+    {
+      "key": "horsepower",
+      "label": "horsepower",
+      "symbol": "hp",
+      "dimension": { "L": 2, "M": 1, "T": -3, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 745.69987158227022,
+      "system": "US",
+      "category": "power",
+      "aliases": ["horsepower (mechanical)", "hp (I)"]
+    },
+    {
+      "key": "horsepower-metric",
+      "label": "metric horsepower",
+      "symbol": "PS",
+      "dimension": { "L": 2, "M": 1, "T": -3, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 735.49875,
+      "system": "Metric",
+      "category": "power",
+      "aliases": ["pferdestärke", "cheval vapeur", "cv"]
+    },
+    {
+      "key": "btu-per-hour",
+      "label": "BTU per hour",
+      "symbol": "BTU/h",
+      "dimension": { "L": 2, "M": 1, "T": -3, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.29307107,
+      "system": "Imperial",
+      "category": "power",
+      "aliases": ["btu per hour", "btu/hr", "btuh"]
+    },
+    {
+      "key": "foot-pound-per-second",
+      "label": "foot-pound per second",
+      "symbol": "ft⋅lb/s",
+      "dimension": { "L": 2, "M": 1, "T": -3, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1.3558179483314004,
+      "system": "US",
+      "category": "power",
+      "aliases": ["foot-pounds per second", "ft-lb/s"]
+    },
+    {
+      "key": "calorie-per-second",
+      "label": "calorie per second",
+      "symbol": "cal/s",
+      "dimension": { "L": 2, "M": 1, "T": -3, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 4.184,
+      "system": "Metric",
+      "category": "power",
+      "aliases": ["calories per second"]
+    }
+  ]
+}

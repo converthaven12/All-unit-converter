@@ -1,0 +1,112 @@
+{
+  "category": {
+    "key": "length",
+    "name": "Length",
+    "description": "Distance and length measurements",
+    "icon": "ruler"
+  },
+  "units": [
+    {
+      "key": "meter",
+      "label": "meter",
+      "symbol": "m",
+      "dimension": { "L": 1, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1,
+      "system": "SI",
+      "category": "length",
+      "aliases": ["metre", "meters", "metres"],
+      "allowPrefixes": true
+    },
+    {
+      "key": "inch",
+      "label": "inch",
+      "symbol": "in",
+      "dimension": { "L": 1, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.0254,
+      "system": "US",
+      "category": "length",
+      "aliases": ["inches", "\""]
+    },
+    {
+      "key": "foot",
+      "label": "foot",
+      "symbol": "ft",
+      "dimension": { "L": 1, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.3048,
+      "system": "US",
+      "category": "length",
+      "aliases": ["feet", "'"]
+    },
+    {
+      "key": "yard",
+      "label": "yard",
+      "symbol": "yd",
+      "dimension": { "L": 1, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.9144,
+      "system": "US",
+      "category": "length",
+      "aliases": ["yards"]
+    },
+    {
+      "key": "mile",
+      "label": "mile",
+      "symbol": "mi",
+      "dimension": { "L": 1, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1609.344,
+      "system": "US",
+      "category": "length",
+      "aliases": ["miles"]
+    },
+    {
+      "key": "nautical-mile",
+      "label": "nautical mile",
+      "symbol": "nmi",
+      "dimension": { "L": 1, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1852,
+      "system": "International",
+      "category": "length",
+      "aliases": ["nautical miles", "nm"]
+    },
+    {
+      "key": "angstrom",
+      "label": "angstrom",
+      "symbol": "Å",
+      "dimension": { "L": 1, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1e-10,
+      "system": "Metric",
+      "category": "length",
+      "aliases": ["angstroms", "ångström"]
+    },
+    {
+      "key": "light-year",
+      "label": "light year",
+      "symbol": "ly",
+      "dimension": { "L": 1, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 9.4607304725808e15,
+      "system": "Astronomical",
+      "category": "length",
+      "aliases": ["light years", "light-years"]
+    },
+    {
+      "key": "astronomical-unit",
+      "label": "astronomical unit",
+      "symbol": "AU",
+      "dimension": { "L": 1, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 149597870700,
+      "system": "Astronomical",
+      "category": "length",
+      "aliases": ["astronomical units", "au"]
+    },
+    {
+      "key": "parsec",
+      "label": "parsec",
+      "symbol": "pc",
+      "dimension": { "L": 1, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 3.0857e16,
+      "system": "Astronomical",
+      "category": "length",
+      "aliases": ["parsecs"],
+      "allowPrefixes": true
+    }
+  ]
+}

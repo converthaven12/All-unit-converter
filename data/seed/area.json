@@ -1,0 +1,100 @@
+{
+  "category": {
+    "key": "area",
+    "name": "Area",
+    "description": "Surface area measurements",
+    "icon": "square"
+  },
+  "units": [
+    {
+      "key": "square-meter",
+      "label": "square meter",
+      "symbol": "m²",
+      "dimension": { "L": 2, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1,
+      "system": "SI",
+      "category": "area",
+      "aliases": ["square meters", "square metre", "square metres", "m^2", "sq m"]
+    },
+    {
+      "key": "square-kilometer",
+      "label": "square kilometer",
+      "symbol": "km²",
+      "dimension": { "L": 2, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1000000,
+      "system": "Metric",
+      "category": "area",
+      "aliases": ["square kilometers", "square kilometre", "square kilometres", "km^2", "sq km"]
+    },
+    {
+      "key": "square-centimeter",
+      "label": "square centimeter",
+      "symbol": "cm²",
+      "dimension": { "L": 2, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.0001,
+      "system": "Metric",
+      "category": "area",
+      "aliases": ["square centimeters", "square centimetre", "square centimetres", "cm^2", "sq cm"]
+    },
+    {
+      "key": "square-inch",
+      "label": "square inch",
+      "symbol": "in²",
+      "dimension": { "L": 2, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.00064516,
+      "system": "US",
+      "category": "area",
+      "aliases": ["square inches", "in^2", "sq in"]
+    },
+    {
+      "key": "square-foot",
+      "label": "square foot",
+      "symbol": "ft²",
+      "dimension": { "L": 2, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.09290304,
+      "system": "US",
+      "category": "area",
+      "aliases": ["square feet", "ft^2", "sq ft"]
+    },
+    {
+      "key": "square-yard",
+      "label": "square yard",
+      "symbol": "yd²",
+      "dimension": { "L": 2, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.83612736,
+      "system": "US",
+      "category": "area",
+      "aliases": ["square yards", "yd^2", "sq yd"]
+    },
+    {
+      "key": "square-mile",
+      "label": "square mile",
+      "symbol": "mi²",
+      "dimension": { "L": 2, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 2589988.110336,
+      "system": "US",
+      "category": "area",
+      "aliases": ["square miles", "mi^2", "sq mi"]
+    },
+    {
+      "key": "acre",
+      "label": "acre",
+      "symbol": "ac",
+      "dimension": { "L": 2, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 4046.8564224,
+      "system": "US",
+      "category": "area",
+      "aliases": ["acres"]
+    },
+    {
+      "key": "hectare",
+      "label": "hectare",
+      "symbol": "ha",
+      "dimension": { "L": 2, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 10000,
+      "system": "Metric",
+      "category": "area",
+      "aliases": ["hectares"]
+    }
+  ]
+}

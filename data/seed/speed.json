@@ -1,0 +1,80 @@
+{
+  "category": {
+    "key": "speed",
+    "name": "Speed",
+    "description": "Speed and velocity measurements",
+    "icon": "gauge"
+  },
+  "units": [
+    {
+      "key": "meter-per-second",
+      "label": "meter per second",
+      "symbol": "m/s",
+      "dimension": { "L": 1, "M": 0, "T": -1, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1,
+      "system": "SI",
+      "category": "speed",
+      "aliases": ["meters per second", "mps", "m·s⁻¹"]
+    },
+    {
+      "key": "kilometer-per-hour",
+      "label": "kilometer per hour",
+      "symbol": "km/h",
+      "dimension": { "L": 1, "M": 0, "T": -1, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.2777777777777778,
+      "system": "Metric",
+      "category": "speed",
+      "aliases": ["kilometers per hour", "kmh", "kph", "km·h⁻¹"]
+    },
+    {
+      "key": "mile-per-hour",
+      "label": "mile per hour",
+      "symbol": "mph",
+      "dimension": { "L": 1, "M": 0, "T": -1, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.44704,
+      "system": "US",
+      "category": "speed",
+      "aliases": ["miles per hour", "mi/h", "mi·h⁻¹"]
+    },
+    {
+      "key": "foot-per-second",
+      "label": "foot per second",
+      "symbol": "ft/s",
+      "dimension": { "L": 1, "M": 0, "T": -1, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.3048,
+      "system": "US",
+      "category": "speed",
+      "aliases": ["feet per second", "fps", "ft·s⁻¹"]
+    },
+    {
+      "key": "knot",
+      "label": "knot",
+      "symbol": "kn",
+      "dimension": { "L": 1, "M": 0, "T": -1, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.5144444444444445,
+      "system": "Nautical",
+      "category": "speed",
+      "aliases": ["knots", "kt", "nautical miles per hour"]
+    },
+    {
+      "key": "mach",
+      "label": "Mach",
+      "symbol": "Ma",
+      "dimension": { "L": 1, "M": 0, "T": -1, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 343,
+      "system": "Aeronautical",
+      "category": "speed",
+      "aliases": ["mach number"]
+    },
+    {
+      "key": "speed-of-light",
+      "label": "speed of light",
+      "symbol": "c",
+      "dimension": { "L": 1, "M": 0, "T": -1, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 299792458,
+      "system": "Physical",
+      "category": "speed",
+      "aliases": ["light speed"]
+    }
+  ]
+}

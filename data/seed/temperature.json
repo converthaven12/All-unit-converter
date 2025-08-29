@@ -1,0 +1,52 @@
+{
+  "category": {
+    "key": "temperature",
+    "name": "Temperature",
+    "description": "Temperature measurements",
+    "icon": "thermometer"
+  },
+  "units": [
+    {
+      "key": "kelvin",
+      "label": "kelvin",
+      "symbol": "K",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 1, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1,
+      "system": "SI",
+      "category": "temperature",
+      "aliases": ["kelvins"]
+    },
+    {
+      "key": "celsius",
+      "label": "degree Celsius",
+      "symbol": "°C",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 1, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1,
+      "offsetToBase": 273.15,
+      "system": "Metric",
+      "category": "temperature",
+      "aliases": ["centigrade", "degrees celsius", "C"]
+    },
+    {
+      "key": "fahrenheit",
+      "label": "degree Fahrenheit",
+      "symbol": "°F",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 1, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.5555555555555556,
+      "offsetToBase": 255.37222222222223,
+      "system": "US",
+      "category": "temperature",
+      "aliases": ["degrees fahrenheit", "F"]
+    },
+    {
+      "key": "rankine",
+      "label": "degree Rankine",
+      "symbol": "°R",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 1, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.5555555555555556,
+      "system": "US",
+      "category": "temperature",
+      "aliases": ["degrees rankine", "R"]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "category": {
+    "key": "mass",
+    "name": "Mass & Weight",
+    "description": "Mass and weight measurements",
+    "icon": "weight"
+  },
+  "units": [
+    {
+      "key": "kilogram",
+      "label": "kilogram",
+      "symbol": "kg",
+      "dimension": { "L": 0, "M": 1, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1,
+      "system": "SI",
+      "category": "mass",
+      "aliases": ["kilograms", "kilo", "kilos"]
+    },
+    {
+      "key": "gram",
+      "label": "gram",
+      "symbol": "g",
+      "dimension": { "L": 0, "M": 1, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.001,
+      "system": "SI",
+      "category": "mass",
+      "aliases": ["grams", "gramme", "grammes"],
+      "allowPrefixes": true
+    },
+    {
+      "key": "pound",
+      "label": "pound",
+      "symbol": "lb",
+      "dimension": { "L": 0, "M": 1, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.45359237,
+      "system": "US",
+      "category": "mass",
+      "aliases": ["pounds", "lbs", "pound-mass"]
+    },
+    {
+      "key": "ounce",
+      "label": "ounce",
+      "symbol": "oz",
+      "dimension": { "L": 0, "M": 1, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.028349523125,
+      "system": "US",
+      "category": "mass",
+      "aliases": ["ounces"]
+    },
+    {
+      "key": "stone",
+      "label": "stone",
+      "symbol": "st",
+      "dimension": { "L": 0, "M": 1, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 6.35029318,
+      "system": "UK",
+      "category": "mass",
+      "aliases": ["stones"]
+    },
+    {
+      "key": "ton-metric",
+      "label": "metric ton",
+      "symbol": "t",
+      "dimension": { "L": 0, "M": 1, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1000,
+      "system": "Metric",
+      "category": "mass",
+      "aliases": ["metric tons", "tonne", "tonnes"]
+    },
+    {
+      "key": "ton-us",
+      "label": "US ton",
+      "symbol": "ton",
+      "dimension": { "L": 0, "M": 1, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 907.18474,
+      "system": "US",
+      "category": "mass",
+      "aliases": ["us tons", "short ton", "short tons"]
+    },
+    {
+      "key": "carat",
+      "label": "carat",
+      "symbol": "ct",
+      "dimension": { "L": 0, "M": 1, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.0002,
+      "system": "Metric",
+      "category": "mass",
+      "aliases": ["carats"]
+    },
+    {
+      "key": "grain",
+      "label": "grain",
+      "symbol": "gr",
+      "dimension": { "L": 0, "M": 1, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.00006479891,
+      "system": "Imperial",
+      "category": "mass",
+      "aliases": ["grains"]
+    },
+    {
+      "key": "atomic-mass-unit",
+      "label": "atomic mass unit",
+      "symbol": "u",
+      "dimension": { "L": 0, "M": 1, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1.6605390666e-27,
+      "system": "Atomic",
+      "category": "mass",
+      "aliases": ["amu", "dalton", "Da"]
+    }
+  ]
+}

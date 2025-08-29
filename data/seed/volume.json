@@ -1,0 +1,131 @@
+{
+  "category": {
+    "key": "volume",
+    "name": "Volume",
+    "description": "Volume and capacity measurements",
+    "icon": "cube"
+  },
+  "units": [
+    {
+      "key": "cubic-meter",
+      "label": "cubic meter",
+      "symbol": "m³",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1,
+      "system": "SI",
+      "category": "volume",
+      "aliases": ["cubic meters", "cubic metre", "cubic metres", "m^3"]
+    },
+    {
+      "key": "liter",
+      "label": "liter",
+      "symbol": "L",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.001,
+      "system": "Metric",
+      "category": "volume",
+      "aliases": ["liters", "litre", "litres", "l"],
+      "allowPrefixes": true
+    },
+    {
+      "key": "gallon-us",
+      "label": "US gallon",
+      "symbol": "gal",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.003785411784,
+      "system": "US",
+      "category": "volume",
+      "aliases": ["gallons", "us gallon", "us gallons"]
+    },
+    {
+      "key": "gallon-uk",
+      "label": "UK gallon",
+      "symbol": "gal (UK)",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.00454609,
+      "system": "UK",
+      "category": "volume",
+      "aliases": ["uk gallon", "uk gallons", "imperial gallon", "imperial gallons"]
+    },
+    {
+      "key": "quart-us",
+      "label": "US quart",
+      "symbol": "qt",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.000946352946,
+      "system": "US",
+      "category": "volume",
+      "aliases": ["quarts", "us quart", "us quarts"]
+    },
+    {
+      "key": "pint-us",
+      "label": "US pint",
+      "symbol": "pt",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.000473176473,
+      "system": "US",
+      "category": "volume",
+      "aliases": ["pints", "us pint", "us pints"]
+    },
+    {
+      "key": "cup-us",
+      "label": "US cup",
+      "symbol": "cup",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.0002365882365,
+      "system": "US",
+      "category": "volume",
+      "aliases": ["cups", "us cup", "us cups"]
+    },
+    {
+      "key": "fluid-ounce-us",
+      "label": "US fluid ounce",
+      "symbol": "fl oz",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.0000295735296875,
+      "system": "US",
+      "category": "volume",
+      "aliases": ["fluid ounces", "fl. oz.", "us fl oz"]
+    },
+    {
+      "key": "tablespoon-us",
+      "label": "US tablespoon",
+      "symbol": "tbsp",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.00001478676478125,
+      "system": "US",
+      "category": "volume",
+      "aliases": ["tablespoons", "tbsp.", "T", "us tbsp"]
+    },
+    {
+      "key": "teaspoon-us",
+      "label": "US teaspoon",
+      "symbol": "tsp",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.00000492892159375,
+      "system": "US",
+      "category": "volume",
+      "aliases": ["teaspoons", "tsp.", "t", "us tsp"]
+    },
+    {
+      "key": "cubic-foot",
+      "label": "cubic foot",
+      "symbol": "ft³",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.028316846592,
+      "system": "US",
+      "category": "volume",
+      "aliases": ["cubic feet", "ft^3", "cu ft"]
+    },
+    {
+      "key": "cubic-inch",
+      "label": "cubic inch",
+      "symbol": "in³",
+      "dimension": { "L": 3, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.000016387064,
+      "system": "US",
+      "category": "volume",
+      "aliases": ["cubic inches", "in^3", "cu in"]
+    }
+  ]
+}

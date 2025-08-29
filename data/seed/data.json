@@ -1,0 +1,114 @@
+{
+  "category": {
+    "key": "data",
+    "name": "Data Storage",
+    "description": "Digital data storage measurements",
+    "icon": "hard-drive"
+  },
+  "units": [
+    {
+      "key": "byte",
+      "label": "byte",
+      "symbol": "B",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1,
+      "system": "Digital",
+      "category": "data",
+      "aliases": ["bytes"],
+      "allowPrefixes": true,
+      "allowBinaryPrefixes": true
+    },
+    {
+      "key": "bit",
+      "label": "bit",
+      "symbol": "bit",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 0.125,
+      "system": "Digital",
+      "category": "data",
+      "aliases": ["bits", "b"],
+      "allowPrefixes": true,
+      "allowBinaryPrefixes": true
+    },
+    {
+      "key": "kilobyte",
+      "label": "kilobyte",
+      "symbol": "KB",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1000,
+      "system": "Digital",
+      "category": "data",
+      "aliases": ["kilobytes", "kB"]
+    },
+    {
+      "key": "kibibyte",
+      "label": "kibibyte",
+      "symbol": "KiB",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1024,
+      "system": "Digital",
+      "category": "data",
+      "aliases": ["kibibytes"]
+    },
+    {
+      "key": "megabyte",
+      "label": "megabyte",
+      "symbol": "MB",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1000000,
+      "system": "Digital",
+      "category": "data",
+      "aliases": ["megabytes"]
+    },
+    {
+      "key": "mebibyte",
+      "label": "mebibyte",
+      "symbol": "MiB",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1048576,
+      "system": "Digital",
+      "category": "data",
+      "aliases": ["mebibytes"]
+    },
+    {
+      "key": "gigabyte",
+      "label": "gigabyte",
+      "symbol": "GB",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1000000000,
+      "system": "Digital",
+      "category": "data",
+      "aliases": ["gigabytes"]
+    },
+    {
+      "key": "gibibyte",
+      "label": "gibibyte",
+      "symbol": "GiB",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1073741824,
+      "system": "Digital",
+      "category": "data",
+      "aliases": ["gibibytes"]
+    },
+    {
+      "key": "terabyte",
+      "label": "terabyte",
+      "symbol": "TB",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1000000000000,
+      "system": "Digital",
+      "category": "data",
+      "aliases": ["terabytes"]
+    },
+    {
+      "key": "tebibyte",
+      "label": "tebibyte",
+      "symbol": "TiB",
+      "dimension": { "L": 0, "M": 0, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1099511627776,
+      "system": "Digital",
+      "category": "data",
+      "aliases": ["tebibytes"]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "category": {
+    "key": "energy",
+    "name": "Energy",
+    "description": "Energy and work measurements",
+    "icon": "zap"
+  },
+  "units": [
+    {
+      "key": "joule",
+      "label": "joule",
+      "symbol": "J",
+      "dimension": { "L": 2, "M": 1, "T": -2, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1,
+      "system": "SI",
+      "category": "energy",
+      "aliases": ["joules"],
+      "allowPrefixes": true
+    },
+    {
+      "key": "calorie",
+      "label": "calorie",
+      "symbol": "cal",
+      "dimension": { "L": 2, "M": 1, "T": -2, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 4.184,
+      "system": "Metric",
+      "category": "energy",
+      "aliases": ["calories", "gram calorie"]
+    },
+    {
+      "key": "kilocalorie",
+      "label": "kilocalorie",
+      "symbol": "kcal",
+      "dimension": { "L": 2, "M": 1, "T": -2, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 4184,
+      "system": "Metric",
+      "category": "energy",
+      "aliases": ["kilocalories", "Calorie", "Calories", "food calorie", "large calorie"]
+    },
+    {
+      "key": "watt-hour",
+      "label": "watt hour",
+      "symbol": "Wh",
+      "dimension": { "L": 2, "M": 1, "T": -2, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 3600,
+      "system": "Metric",
+      "category": "energy",
+      "aliases": ["watt hours", "watt-hours"],
+      "allowPrefixes": true
+    },
+    {
+      "key": "kilowatt-hour",
+      "label": "kilowatt hour",
+      "symbol": "kWh",
+      "dimension": { "L": 2, "M": 1, "T": -2, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 3600000,
+      "system": "Metric",
+      "category": "energy",
+      "aliases": ["kilowatt hours", "kilowatt-hours", "kW⋅h"]
+    },
+    {
+      "key": "btu",
+      "label": "British thermal unit",
+      "symbol": "BTU",
+      "dimension": { "L": 2, "M": 1, "T": -2, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1055.05585262,
+      "system": "Imperial",
+      "category": "energy",
+      "aliases": ["british thermal units", "Btu"]
+    },
+    {
+      "key": "foot-pound",
+      "label": "foot-pound",
+      "symbol": "ft⋅lb",
+      "dimension": { "L": 2, "M": 1, "T": -2, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1.3558179483314004,
+      "system": "US",
+      "category": "energy",
+      "aliases": ["foot-pounds", "ft-lb", "ft·lbf"]
+    },
+    {
+      "key": "electron-volt",
+      "label": "electron volt",
+      "symbol": "eV",
+      "dimension": { "L": 2, "M": 1, "T": -2, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 1.602176634e-19,
+      "system": "Atomic",
+      "category": "energy",
+      "aliases": ["electron volts", "electronvolt"],
+      "allowPrefixes": true
+    },
+    {
+      "key": "therm",
+      "label": "therm",
+      "symbol": "thm",
+      "dimension": { "L": 2, "M": 1, "T": -2, "I": 0, "Θ": 0, "N": 0, "J": 0, "A": 0 },
+      "factorToBase": 105505585.262,
+      "system": "US",
+      "category": "energy",
+      "aliases": ["therms"]
+    }
+  ]
+}
