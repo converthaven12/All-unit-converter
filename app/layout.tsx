@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import Link from "next/link"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -33,35 +34,62 @@ function InteractiveSidebar() {
               </svg>
             </summary>
             <div className="space-y-1 ml-4 mt-2">
-              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+              <Link
+                href="/convert/meters-to-feet"
+                className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors"
+              >
                 Meters ↔ Feet
-              </button>
-              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/cm-to-inches"
+                className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors"
+              >
                 CM ↔ Inches
-              </button>
-              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/kilometers-to-miles"
+                className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors"
+              >
                 Kilometers ↔ Miles
-              </button>
-              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/millimeters-to-inches"
+                className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors"
+              >
                 Millimeters ↔ Inches
-              </button>
-              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/yards-to-meters"
+                className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors"
+              >
                 Yards ↔ Meters
-              </button>
-              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/nautical-miles-to-miles"
+                className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors"
+              >
                 Nautical Miles ↔ Miles
-              </button>
+              </Link>
               <div className="mt-3 pt-2 border-t border-gray-200">
                 <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-blue-600 p-1 rounded transition-colors">
+                <Link
+                  href="/convert/feet-to-meters"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-blue-600 p-1 rounded transition-colors"
+                >
                   • Feet to Meters (Most Popular)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-blue-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/inches-to-cm"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-blue-600 p-1 rounded transition-colors"
+                >
                   • Inches to CM (Trending)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-blue-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/miles-to-km"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-blue-600 p-1 rounded transition-colors"
+                >
                   • Miles to KM (Popular)
-                </button>
+                </Link>
               </div>
             </div>
           </details>
@@ -80,32 +108,56 @@ function InteractiveSidebar() {
               </svg>
             </summary>
             <div className="space-y-1 ml-4 mt-2">
-              <button className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors">
+              <Link
+                href="/convert/kilograms-to-pounds"
+                className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors"
+              >
                 Kilograms ↔ Pounds
-              </button>
-              <button className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/grams-to-ounces"
+                className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors"
+              >
                 Grams ↔ Ounces
-              </button>
-              <button className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/tons-to-pounds"
+                className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors"
+              >
                 Tons ↔ Pounds
-              </button>
-              <button className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/stones-to-kilograms"
+                className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors"
+              >
                 Stones ↔ Kilograms
-              </button>
-              <button className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/carats-to-grams"
+                className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors"
+              >
                 Carats ↔ Grams
-              </button>
+              </Link>
               <div className="mt-3 pt-2 border-t border-gray-200">
                 <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-green-600 p-1 rounded transition-colors">
+                <Link
+                  href="/convert/pounds-to-kg"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-green-600 p-1 rounded transition-colors"
+                >
                   • Pounds to KG (Most Popular)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-green-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/ounces-to-grams"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-green-600 p-1 rounded transition-colors"
+                >
                   • Ounces to Grams (Trending)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-green-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/stones-to-pounds"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-green-600 p-1 rounded transition-colors"
+                >
                   • Stones to Pounds (Popular)
-                </button>
+                </Link>
               </div>
             </div>
           </details>
@@ -124,23 +176,38 @@ function InteractiveSidebar() {
               </svg>
             </summary>
             <div className="space-y-1 ml-4 mt-2">
-              <button className="block w-full text-left text-sm text-red-600 hover:text-red-800 hover:bg-red-50 p-2 rounded-md transition-colors">
+              <Link
+                href="/convert/celsius-to-fahrenheit"
+                className="block w-full text-left text-sm text-red-600 hover:text-red-800 hover:bg-red-50 p-2 rounded-md transition-colors"
+              >
                 Celsius ↔ Fahrenheit
-              </button>
-              <button className="block w-full text-left text-sm text-red-600 hover:text-red-800 hover:bg-red-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/kelvin-to-celsius"
+                className="block w-full text-left text-sm text-red-600 hover:text-red-800 hover:bg-red-50 p-2 rounded-md transition-colors"
+              >
                 Kelvin ↔ Celsius
-              </button>
-              <button className="block w-full text-left text-sm text-red-600 hover:text-red-800 hover:bg-red-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/rankine-to-fahrenheit"
+                className="block w-full text-left text-sm text-red-600 hover:text-red-800 hover:bg-red-50 p-2 rounded-md transition-colors"
+              >
                 Rankine ↔ Fahrenheit
-              </button>
+              </Link>
               <div className="mt-3 pt-2 border-t border-gray-200">
                 <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-red-600 p-1 rounded transition-colors">
+                <Link
+                  href="/convert/celsius-to-fahrenheit"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-red-600 p-1 rounded transition-colors"
+                >
                   • Celsius to Fahrenheit (Most Popular)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-red-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/fahrenheit-to-celsius"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-red-600 p-1 rounded transition-colors"
+                >
                   • Fahrenheit to Celsius (Trending)
-                </button>
+                </Link>
               </div>
             </div>
           </details>
@@ -159,35 +226,62 @@ function InteractiveSidebar() {
               </svg>
             </summary>
             <div className="space-y-1 ml-4 mt-2">
-              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+              <Link
+                href="/convert/liters-to-gallons"
+                className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors"
+              >
                 Liters ↔ Gallons
-              </button>
-              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/milliliters-to-fluid-ounces"
+                className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors"
+              >
                 Milliliters ↔ Fluid Ounces
-              </button>
-              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/cubic-meters-to-cubic-feet"
+                className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors"
+              >
                 Cubic Meters ↔ Cubic Feet
-              </button>
-              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/cups-to-milliliters"
+                className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors"
+              >
                 Cups ↔ Milliliters
-              </button>
-              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/pints-to-liters"
+                className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors"
+              >
                 Pints ↔ Liters
-              </button>
-              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/quarts-to-liters"
+                className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors"
+              >
                 Quarts ↔ Liters
-              </button>
+              </Link>
               <div className="mt-3 pt-2 border-t border-gray-200">
                 <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-purple-600 p-1 rounded transition-colors">
+                <Link
+                  href="/convert/liters-to-gallons"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-purple-600 p-1 rounded transition-colors"
+                >
                   • Liters to Gallons (Most Popular)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-purple-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/ml-to-fluid-ounces"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-purple-600 p-1 rounded transition-colors"
+                >
                   • ML to Fluid Ounces (Trending)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-purple-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/cups-to-ml"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-purple-600 p-1 rounded transition-colors"
+                >
                   • Cups to ML (Popular)
-                </button>
+                </Link>
               </div>
             </div>
           </details>
@@ -206,26 +300,44 @@ function InteractiveSidebar() {
               </svg>
             </summary>
             <div className="space-y-1 ml-4 mt-2">
-              <button className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors">
+              <Link
+                href="/convert/square-meters-to-square-feet"
+                className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors"
+              >
                 Square Meters ↔ Square Feet
-              </button>
-              <button className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/acres-to-square-meters"
+                className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors"
+              >
                 Acres ↔ Square Meters
-              </button>
-              <button className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/hectares-to-acres"
+                className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors"
+              >
                 Hectares ↔ Acres
-              </button>
-              <button className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/square-kilometers-to-square-miles"
+                className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors"
+              >
                 Square Kilometers ↔ Square Miles
-              </button>
+              </Link>
               <div className="mt-3 pt-2 border-t border-gray-200">
                 <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-yellow-600 p-1 rounded transition-colors">
+                <Link
+                  href="/convert/sq-feet-to-sq-meters"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-yellow-600 p-1 rounded transition-colors"
+                >
                   • Sq Feet to Sq Meters (Most Popular)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-yellow-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/acres-to-hectares"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-yellow-600 p-1 rounded transition-colors"
+                >
                   • Acres to Hectares (Trending)
-                </button>
+                </Link>
               </div>
             </div>
           </details>
@@ -244,26 +356,44 @@ function InteractiveSidebar() {
               </svg>
             </summary>
             <div className="space-y-1 ml-4 mt-2">
-              <button className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors">
+              <Link
+                href="/convert/kmh-to-mph"
+                className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors"
+              >
                 KM/H ↔ MPH
-              </button>
-              <button className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/ms-to-fts"
+                className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors"
+              >
                 M/S ↔ FT/S
-              </button>
-              <button className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/knots-to-mph"
+                className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors"
+              >
                 Knots ↔ MPH
-              </button>
-              <button className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/mach-to-kmh"
+                className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors"
+              >
                 Mach ↔ KM/H
-              </button>
+              </Link>
               <div className="mt-3 pt-2 border-t border-gray-200">
                 <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-indigo-600 p-1 rounded transition-colors">
+                <Link
+                  href="/convert/kmh-to-mph"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-indigo-600 p-1 rounded transition-colors"
+                >
                   • KM/H to MPH (Most Popular)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-indigo-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/mph-to-kmh"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-indigo-600 p-1 rounded transition-colors"
+                >
                   • MPH to KM/H (Trending)
-                </button>
+                </Link>
               </div>
             </div>
           </details>
@@ -282,23 +412,38 @@ function InteractiveSidebar() {
               </svg>
             </summary>
             <div className="space-y-1 ml-4 mt-2">
-              <button className="block w-full text-left text-sm text-pink-600 hover:text-pink-800 hover:bg-pink-50 p-2 rounded-md transition-colors">
+              <Link
+                href="/convert/pascal-to-psi"
+                className="block w-full text-left text-sm text-pink-600 hover:text-pink-800 hover:bg-pink-50 p-2 rounded-md transition-colors"
+              >
                 Pascal ↔ PSI
-              </button>
-              <button className="block w-full text-left text-sm text-pink-600 hover:text-pink-800 hover:bg-pink-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/bar-to-atmosphere"
+                className="block w-full text-left text-sm text-pink-600 hover:text-pink-800 hover:bg-pink-50 p-2 rounded-md transition-colors"
+              >
                 Bar ↔ Atmosphere
-              </button>
-              <button className="block w-full text-left text-sm text-pink-600 hover:text-pink-800 hover:bg-pink-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/torr-to-mmhg"
+                className="block w-full text-left text-sm text-pink-600 hover:text-pink-800 hover:bg-pink-50 p-2 rounded-md transition-colors"
+              >
                 Torr ↔ mmHg
-              </button>
+              </Link>
               <div className="mt-3 pt-2 border-t border-gray-200">
                 <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-pink-600 p-1 rounded transition-colors">
+                <Link
+                  href="/convert/psi-to-bar"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-pink-600 p-1 rounded transition-colors"
+                >
                   • PSI to Bar (Most Popular)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-pink-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/bar-to-psi"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-pink-600 p-1 rounded transition-colors"
+                >
                   • Bar to PSI (Trending)
-                </button>
+                </Link>
               </div>
             </div>
           </details>
@@ -317,23 +462,38 @@ function InteractiveSidebar() {
               </svg>
             </summary>
             <div className="space-y-1 ml-4 mt-2">
-              <button className="block w-full text-left text-sm text-orange-600 hover:text-orange-800 hover:bg-orange-50 p-2 rounded-md transition-colors">
+              <Link
+                href="/convert/joules-to-calories"
+                className="block w-full text-left text-sm text-orange-600 hover:text-orange-800 hover:bg-orange-50 p-2 rounded-md transition-colors"
+              >
                 Joules ↔ Calories
-              </button>
-              <button className="block w-full text-left text-sm text-orange-600 hover:text-orange-800 hover:bg-orange-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/kwh-to-btu"
+                className="block w-full text-left text-sm text-orange-600 hover:text-orange-800 hover:bg-orange-50 p-2 rounded-md transition-colors"
+              >
                 kWh ↔ BTU
-              </button>
-              <button className="block w-full text-left text-sm text-orange-600 hover:text-orange-800 hover:bg-orange-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/watts-to-horsepower"
+                className="block w-full text-left text-sm text-orange-600 hover:text-orange-800 hover:bg-orange-50 p-2 rounded-md transition-colors"
+              >
                 Watts ↔ Horsepower
-              </button>
+              </Link>
               <div className="mt-3 pt-2 border-t border-gray-200">
                 <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-orange-600 p-1 rounded transition-colors">
+                <Link
+                  href="/convert/calories-to-joules"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-orange-600 p-1 rounded transition-colors"
+                >
                   • Calories to Joules (Most Popular)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-orange-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/kwh-to-btu"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-orange-600 p-1 rounded transition-colors"
+                >
                   • kWh to BTU (Trending)
-                </button>
+                </Link>
               </div>
             </div>
           </details>
@@ -352,23 +512,38 @@ function InteractiveSidebar() {
               </svg>
             </summary>
             <div className="space-y-1 ml-4 mt-2">
-              <button className="block w-full text-left text-sm text-cyan-600 hover:text-cyan-800 hover:bg-cyan-50 p-2 rounded-md transition-colors">
+              <Link
+                href="/convert/bytes-to-bits"
+                className="block w-full text-left text-sm text-cyan-600 hover:text-cyan-800 hover:bg-cyan-50 p-2 rounded-md transition-colors"
+              >
                 Bytes ↔ Bits
-              </button>
-              <button className="block w-full text-left text-sm text-cyan-600 hover:text-cyan-800 hover:bg-cyan-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/kb-to-mb"
+                className="block w-full text-left text-sm text-cyan-600 hover:text-cyan-800 hover:bg-cyan-50 p-2 rounded-md transition-colors"
+              >
                 KB ↔ MB
-              </button>
-              <button className="block w-full text-left text-sm text-cyan-600 hover:text-cyan-800 hover:bg-cyan-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/gb-to-tb"
+                className="block w-full text-left text-sm text-cyan-600 hover:text-cyan-800 hover:bg-cyan-50 p-2 rounded-md transition-colors"
+              >
                 GB ↔ TB
-              </button>
+              </Link>
               <div className="mt-3 pt-2 border-t border-gray-200">
                 <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-cyan-600 p-1 rounded transition-colors">
+                <Link
+                  href="/convert/gb-to-mb"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-cyan-600 p-1 rounded transition-colors"
+                >
                   • GB to MB (Most Popular)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-cyan-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/mb-to-kb"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-cyan-600 p-1 rounded transition-colors"
+                >
                   • MB to KB (Trending)
-                </button>
+                </Link>
               </div>
             </div>
           </details>
@@ -387,23 +562,38 @@ function InteractiveSidebar() {
               </svg>
             </summary>
             <div className="space-y-1 ml-4 mt-2">
-              <button className="block w-full text-left text-sm text-teal-600 hover:text-teal-800 hover:bg-teal-50 p-2 rounded-md transition-colors">
+              <Link
+                href="/convert/hours-to-minutes"
+                className="block w-full text-left text-sm text-teal-600 hover:text-teal-800 hover:bg-teal-50 p-2 rounded-md transition-colors"
+              >
                 Hours ↔ Minutes
-              </button>
-              <button className="block w-full text-left text-sm text-teal-600 hover:text-teal-800 hover:bg-teal-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/days-to-hours"
+                className="block w-full text-left text-sm text-teal-600 hover:text-teal-800 hover:bg-teal-50 p-2 rounded-md transition-colors"
+              >
                 Days ↔ Hours
-              </button>
-              <button className="block w-full text-left text-sm text-teal-600 hover:text-teal-800 hover:bg-teal-50 p-2 rounded-md transition-colors">
+              </Link>
+              <Link
+                href="/convert/years-to-days"
+                className="block w-full text-left text-sm text-teal-600 hover:text-teal-800 hover:bg-teal-50 p-2 rounded-md transition-colors"
+              >
                 Years ↔ Days
-              </button>
+              </Link>
               <div className="mt-3 pt-2 border-t border-gray-200">
                 <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-teal-600 p-1 rounded transition-colors">
+                <Link
+                  href="/convert/hours-to-minutes"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-teal-600 p-1 rounded transition-colors"
+                >
                   • Hours to Minutes (Most Popular)
-                </button>
-                <button className="block w-full text-left text-xs text-gray-600 hover:text-teal-600 p-1 rounded transition-colors">
+                </Link>
+                <Link
+                  href="/convert/days-to-hours"
+                  className="block w-full text-left text-xs text-gray-600 hover:text-teal-600 p-1 rounded transition-colors"
+                >
                   • Days to Hours (Trending)
-                </button>
+                </Link>
               </div>
             </div>
           </details>
