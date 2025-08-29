@@ -76,8 +76,15 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         {converters.length >= 1 && (
           <section className="max-w-2xl mx-auto">
             <ConverterWidget
-              converter={converters[0]}
-              title={`${converters[0].from} to ${converters[0].to} Converter`}
+              fromUnit={converters[0].from}
+              toUnit={converters[0].to}
+              fromSymbol={converters[0].symbols.from}
+              toSymbol={converters[0].symbols.to}
+              availableUnits={converters.map((c) => ({
+                label: c.from,
+                value: c.from,
+                symbol: c.symbols.from,
+              }))}
             />
           </section>
         )}
