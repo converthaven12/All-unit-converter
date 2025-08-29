@@ -12,7 +12,7 @@ interface SearchResult {
   url: string
 }
 
-export default function Search() {
+function Search() {
   const [query, setQuery] = useState("")
   const [results, setResults] = useState<SearchResult[]>([])
   const [isOpen, setIsOpen] = useState(false)
@@ -145,3 +145,6 @@ export default function Search() {
     </div>
   )
 }
+
+export default Search
+export { Search }

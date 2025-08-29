@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Search } from "./search"
+import { Search } from "./Search"
 
 const categories = [
   { name: "Length", href: "/length" },

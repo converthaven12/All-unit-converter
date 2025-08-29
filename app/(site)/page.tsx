@@ -1,4 +1,4 @@
-import { Search } from "@/components/search"
+import { Search } from "@/components/Search"
 import { CategoryCard } from "@/components/category-card"
 import { Card, CardContent } from "@/components/ui/card"
 import { ConverterWidget } from "@/components/converter-widget"

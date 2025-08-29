@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    // Enable static exports for better performance
-    staticWorkerRequestDeduping: true,
   },
   // Enable static optimization
   trailingSlash: false,
@@ -14,8 +12,6 @@ const nextConfig = {
   },
   // Enable compression
   compress: true,
-  // Generate static params for popular converters
-  generateStaticParams: true,
   // Headers for better caching
   async headers() {
     return [
