@@ -20,7 +20,7 @@ export function Navigation() {
           <div className="flex items-center space-x-8">
             <Link href="/" className="flex items-center space-x-2">
               <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm"><br></span>
+                <span className="text-primary-foreground font-bold text-sm">UC</span>
               </div>
               <span className="font-semibold text-lg">Unit Converter</span>
             </Link>

@@ -6,7 +6,7 @@ export default function Sidebar() {
     <aside className="w-64 bg-gray-50 border-r border-gray-200 h-screen sticky top-0 overflow-y-auto">
       <div className="p-4">
         <div className="bg-blue-600 text-white px-3 py-2 rounded-md mb-4">
-          <h3 className="font-semibold tracking-tighter">All Converters</h3>
+          <h2 className="font-semibold tracking-tighter">All Converters</h2>
         </div>
         <nav className="space-y-4">
           {CATEGORIES.map((category) => {

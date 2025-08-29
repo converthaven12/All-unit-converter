@@ -41,7 +41,7 @@ export function Footer() {
 
           {/* Popular Converters */}
           <div className="space-y-4">
-            <h3 className="font-semibold">Popular Converters</h3>
+            <h2 className="font-semibold">Popular Converters</h2>
             <ul className="space-y-2">
               {popularConverters.map((converter) => (
                 <li key={converter.href}>
@@ -58,7 +58,7 @@ export function Footer() {
 
           {/* Categories */}
           <div className="space-y-4">
-            <h3 className="font-semibold">Categories</h3>
+            <h2 className="font-semibold">Categories</h2>
             <ul className="space-y-2">
               {categories.map((category) => (
                 <li key={category.href}>

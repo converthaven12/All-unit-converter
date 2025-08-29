@@ -115,14 +115,14 @@ export default function ConverterPage({ params }: ConverterPageProps) {
           <h2 className="text-2xl font-semibold">How the Conversion Works</h2>
           <div className="bg-muted/50 p-6 rounded-lg space-y-4">
             <div>
-              <h3 className="font-semibold mb-2">Conversion Formula</h3>
+              <h2 className="font-semibold mb-2">Conversion Formula</h2>
               <p className="font-mono text-lg bg-background p-3 rounded border">
                 {converter.to} = {converter.from} × {converter.factor}
                 {converter.offset ? ` + ${converter.offset}` : ""}
               </p>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">Example Calculation</h3>
+              <h2 className="font-semibold mb-2">Example Calculation</h2>
               <p>
                 To convert 10 {converter.symbols.from} to {converter.symbols.to}:
                 <br />
@@ -132,7 +132,7 @@ export default function ConverterPage({ params }: ConverterPageProps) {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">Conversion Factor</h3>
+              <h2 className="font-semibold mb-2">Conversion Factor</h2>
               <p className="text-sm text-muted-foreground">
                 The conversion factor from {converter.from} to {converter.to} is {converter.factor}.
                 {converter.type === "temperature" &&
@@ -153,9 +153,9 @@ export default function ConverterPage({ params }: ConverterPageProps) {
                 href={`/${params.category}/${relatedConverter.slug}`}
                 className="block p-4 rounded-lg border hover:border-primary/50 hover:shadow-md transition-all"
               >
-                <h3 className="font-medium hover:text-primary transition-colors">
+                <h2 className="font-medium hover:text-primary transition-colors">
                   {relatedConverter.from} to {relatedConverter.to}
-                </h3>
+                </h2>
                 <p className="text-sm text-muted-foreground mt-1">
                   {relatedConverter.symbols.from} → {relatedConverter.symbols.to}
                 </p>
@@ -176,14 +176,14 @@ export default function ConverterPage({ params }: ConverterPageProps) {
             conversion uses a factor of {converter.factor} to provide accurate results.
           </p>
 
-          <h3>When to Use This Conversion</h3>
+          <h2>When to Use This Conversion</h2>
           <p>
             This conversion is commonly used in various fields including engineering, science, construction, and
             everyday measurements. Whether you're working on technical projects or need quick conversions for daily
             tasks, this tool provides the accuracy you need.
           </p>
 
-          <h3>Conversion Accuracy</h3>
+          <h2>Conversion Accuracy</h2>
           <p>
             Our converter uses the official conversion factor of {converter.factor} to ensure maximum accuracy. The
             result can be displayed with up to 6 decimal places, making it suitable for both general use and precision

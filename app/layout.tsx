@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Converthaven - Free Online Unit Converters",
   description:
     "Convert between different units of measurement quickly and accurately. Free online converters for length, weight, temperature, volume, and more.",
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Categories */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Categories</h3>
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">Categories</h2>
                 <ul className="space-y-2">
                   {CATEGORIES.map((category) => (
                     <li key={category.id}>
@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
               {/* Popular Converters */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Popular Converters</h3>
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">Popular Converters</h2>
                 <ul className="space-y-2">
                   {POPULAR_CONVERTERS.slice(0, 8).map((slug) => {
                     const converter = getConverterBySlug(slug)
@@ -74,7 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
               {/* About */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">About</h3>
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">About</h2>
                 <p className="text-gray-600 text-sm">
                   Converthaven provides free, accurate, and easy-to-use unit converters for all your measurement needs.
                 </p>
@@ -87,7 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
 
             <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500 text-sm">
-              © 2024 Converthaven. All rights reserved.
+              © 2024 All Unit Converters All rights reserved.
             </div>
           </div>
         </footer>

@@ -84,7 +84,7 @@ export default function HomePage() {
                     href={`/${converter.category}/${converter.slug}`}
                     className="block hover:text-primary transition-colors"
                   >
-                    <h3 className="text-sm">{converter.title}</h3>
+                    <h2 className="text-sm">{converter.title}</h2>
                     <p className="text-xs text-muted-foreground capitalize">{converter.category} conversion</p>
                   </Link>
                 </CardContent>
@@ -102,7 +102,7 @@ export default function HomePage() {
             engineering, or everyday use, our tool delivers precise results instantly.
           </p>
 
-          <h3>Why Choose Our Converter?</h3>
+          <h2>Why Choose Our Converter?</h2>
           <ul>
             <li>
               <strong>Comprehensive Coverage:</strong> Support for length, mass, temperature, volume, area, speed,

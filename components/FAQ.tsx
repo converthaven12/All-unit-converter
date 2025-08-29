@@ -10,7 +10,7 @@ interface FAQProps {
 export default function FAQ({ items }: FAQProps) {
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-6">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">Frequently Asked Questions</h3>
+      <h2 className="text-lg font-semibold text-gray-900 mb-4">Frequently Asked Questions</h2>
       <div className="space-y-4">
         {items.map((item, index) => (
           <div key={index}>

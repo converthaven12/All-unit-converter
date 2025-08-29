@@ -12,7 +12,7 @@ export default function CategoryCard({ category, converterCount }: CategoryCardP
       href={`/${category.id}`}
       className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200"
     >
-      <h3 className="text-lg font-semibold text-blue-600 mb-2">{category.name}</h3>
+      <h2 className="text-lg font-semibold text-blue-600 mb-2">{category.name}</h2>
       <p className="text-gray-600 text-sm mb-3">{category.description}</p>
       <div className="text-blue-600 text-sm font-medium">{converterCount} converters</div>
     </Link>

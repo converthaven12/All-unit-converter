@@ -92,9 +92,9 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 href={`/${params.category}/${converter.slug}`}
                 className="block p-4 rounded-lg border hover:border-primary/50 hover:shadow-md transition-all"
               >
-                <h3 className="text-sm hover:text-primary transition-colors">
+                <h2 className="text-sm hover:text-primary transition-colors">
                   {converter.from} to {converter.to}
-                </h3>
+                </h2>
                 <p className="text-xs text-muted-foreground mt-1">
                   Convert {converter.symbols.from} to {converter.symbols.to}
                 </p>
@@ -135,7 +135,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             precise results instantly.
           </p>
 
-          <h3>Supported {category.name} Conversions</h3>
+          <h2>Supported {category.name} Conversions</h2>
           <p>We support a comprehensive range of {category.name.toLowerCase()} conversions including:</p>
           <ul>
             {converters.slice(0, 10).map((converter) => (
@@ -148,7 +148,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             {converters.length > 10 && <li>And {converters.length - 10} more conversions...</li>}
           </ul>
 
-          <h3>How to Use the {category.name} Converter</h3>
+          <h2>How to Use the {category.name} Converter</h2>
           <ol>
             <li>Enter the value you want to convert</li>
             <li>Select the unit you're converting from</li>

@@ -106,7 +106,7 @@ function AdminUnitsContent() {
           </Card>
 
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardHeader>
               <CardTitle className="text-sm font-medium">Last Built</CardTitle>
             </CardHeader>
             <CardContent>
@@ -185,7 +185,7 @@ function AdminUnitsContent() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {registry.categories.map((category) => (
               <div key={category.key} className="p-4 border rounded-lg">
-                <h3 className="font-semibold mb-1">{category.name}</h3>
+                <h2 className="font-semibold mb-1">{category.name}</h2>
                 <p className="text-sm text-muted-foreground mb-2">{category.description}</p>
                 <Badge variant="secondary">
                   {registry.units.filter((u) => u.category === category.key).length} units
