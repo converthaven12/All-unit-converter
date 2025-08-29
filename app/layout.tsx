@@ -13,6 +13,406 @@ export const metadata: Metadata = {
   generator: "v0.app",
 }
 
+function InteractiveSidebar() {
+  return (
+    <aside className="w-80 bg-gray-50 border-r border-gray-200 overflow-y-auto">
+      <div className="p-4">
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">All Converters</h2>
+        <nav className="space-y-2">
+          {/* Length Conversions */}
+          <details className="group">
+            <summary className="cursor-pointer text-sm font-medium text-gray-700 mb-2 hover:text-blue-600 flex items-center justify-between p-2 rounded-md hover:bg-gray-100">
+              <span>Length</span>
+              <svg
+                className="w-4 h-4 transition-transform group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </summary>
+            <div className="space-y-1 ml-4 mt-2">
+              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+                Meters ↔ Feet
+              </button>
+              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+                CM ↔ Inches
+              </button>
+              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+                Kilometers ↔ Miles
+              </button>
+              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+                Millimeters ↔ Inches
+              </button>
+              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+                Yards ↔ Meters
+              </button>
+              <button className="block w-full text-left text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-2 rounded-md transition-colors">
+                Nautical Miles ↔ Miles
+              </button>
+              <div className="mt-3 pt-2 border-t border-gray-200">
+                <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-blue-600 p-1 rounded transition-colors">
+                  • Feet to Meters (Most Popular)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-blue-600 p-1 rounded transition-colors">
+                  • Inches to CM (Trending)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-blue-600 p-1 rounded transition-colors">
+                  • Miles to KM (Popular)
+                </button>
+              </div>
+            </div>
+          </details>
+
+          {/* Weight/Mass Conversions */}
+          <details className="group">
+            <summary className="cursor-pointer text-sm font-medium text-gray-700 mb-2 hover:text-green-600 flex items-center justify-between p-2 rounded-md hover:bg-gray-100">
+              <span>Weight & Mass</span>
+              <svg
+                className="w-4 h-4 transition-transform group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </summary>
+            <div className="space-y-1 ml-4 mt-2">
+              <button className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors">
+                Kilograms ↔ Pounds
+              </button>
+              <button className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors">
+                Grams ↔ Ounces
+              </button>
+              <button className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors">
+                Tons ↔ Pounds
+              </button>
+              <button className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors">
+                Stones ↔ Kilograms
+              </button>
+              <button className="block w-full text-left text-sm text-green-600 hover:text-green-800 hover:bg-green-50 p-2 rounded-md transition-colors">
+                Carats ↔ Grams
+              </button>
+              <div className="mt-3 pt-2 border-t border-gray-200">
+                <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-green-600 p-1 rounded transition-colors">
+                  • Pounds to KG (Most Popular)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-green-600 p-1 rounded transition-colors">
+                  • Ounces to Grams (Trending)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-green-600 p-1 rounded transition-colors">
+                  • Stones to Pounds (Popular)
+                </button>
+              </div>
+            </div>
+          </details>
+
+          {/* Temperature Conversions */}
+          <details className="group">
+            <summary className="cursor-pointer text-sm font-medium text-gray-700 mb-2 hover:text-red-600 flex items-center justify-between p-2 rounded-md hover:bg-gray-100">
+              <span>Temperature</span>
+              <svg
+                className="w-4 h-4 transition-transform group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </summary>
+            <div className="space-y-1 ml-4 mt-2">
+              <button className="block w-full text-left text-sm text-red-600 hover:text-red-800 hover:bg-red-50 p-2 rounded-md transition-colors">
+                Celsius ↔ Fahrenheit
+              </button>
+              <button className="block w-full text-left text-sm text-red-600 hover:text-red-800 hover:bg-red-50 p-2 rounded-md transition-colors">
+                Kelvin ↔ Celsius
+              </button>
+              <button className="block w-full text-left text-sm text-red-600 hover:text-red-800 hover:bg-red-50 p-2 rounded-md transition-colors">
+                Rankine ↔ Fahrenheit
+              </button>
+              <div className="mt-3 pt-2 border-t border-gray-200">
+                <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-red-600 p-1 rounded transition-colors">
+                  • Celsius to Fahrenheit (Most Popular)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-red-600 p-1 rounded transition-colors">
+                  • Fahrenheit to Celsius (Trending)
+                </button>
+              </div>
+            </div>
+          </details>
+
+          {/* Volume Conversions */}
+          <details className="group">
+            <summary className="cursor-pointer text-sm font-medium text-gray-700 mb-2 hover:text-purple-600 flex items-center justify-between p-2 rounded-md hover:bg-gray-100">
+              <span>Volume</span>
+              <svg
+                className="w-4 h-4 transition-transform group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </summary>
+            <div className="space-y-1 ml-4 mt-2">
+              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+                Liters ↔ Gallons
+              </button>
+              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+                Milliliters ↔ Fluid Ounces
+              </button>
+              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+                Cubic Meters ↔ Cubic Feet
+              </button>
+              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+                Cups ↔ Milliliters
+              </button>
+              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+                Pints ↔ Liters
+              </button>
+              <button className="block w-full text-left text-sm text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-2 rounded-md transition-colors">
+                Quarts ↔ Liters
+              </button>
+              <div className="mt-3 pt-2 border-t border-gray-200">
+                <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-purple-600 p-1 rounded transition-colors">
+                  • Liters to Gallons (Most Popular)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-purple-600 p-1 rounded transition-colors">
+                  • ML to Fluid Ounces (Trending)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-purple-600 p-1 rounded transition-colors">
+                  • Cups to ML (Popular)
+                </button>
+              </div>
+            </div>
+          </details>
+
+          {/* Area Conversions */}
+          <details className="group">
+            <summary className="cursor-pointer text-sm font-medium text-gray-700 mb-2 hover:text-yellow-600 flex items-center justify-between p-2 rounded-md hover:bg-gray-100">
+              <span>Area</span>
+              <svg
+                className="w-4 h-4 transition-transform group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </summary>
+            <div className="space-y-1 ml-4 mt-2">
+              <button className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors">
+                Square Meters ↔ Square Feet
+              </button>
+              <button className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors">
+                Acres ↔ Square Meters
+              </button>
+              <button className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors">
+                Hectares ↔ Acres
+              </button>
+              <button className="block w-full text-left text-sm text-yellow-600 hover:text-yellow-800 hover:bg-yellow-50 p-2 rounded-md transition-colors">
+                Square Kilometers ↔ Square Miles
+              </button>
+              <div className="mt-3 pt-2 border-t border-gray-200">
+                <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-yellow-600 p-1 rounded transition-colors">
+                  • Sq Feet to Sq Meters (Most Popular)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-yellow-600 p-1 rounded transition-colors">
+                  • Acres to Hectares (Trending)
+                </button>
+              </div>
+            </div>
+          </details>
+
+          {/* Speed Conversions */}
+          <details className="group">
+            <summary className="cursor-pointer text-sm font-medium text-gray-700 mb-2 hover:text-indigo-600 flex items-center justify-between p-2 rounded-md hover:bg-gray-100">
+              <span>Speed</span>
+              <svg
+                className="w-4 h-4 transition-transform group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </summary>
+            <div className="space-y-1 ml-4 mt-2">
+              <button className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors">
+                KM/H ↔ MPH
+              </button>
+              <button className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors">
+                M/S ↔ FT/S
+              </button>
+              <button className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors">
+                Knots ↔ MPH
+              </button>
+              <button className="block w-full text-left text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 p-2 rounded-md transition-colors">
+                Mach ↔ KM/H
+              </button>
+              <div className="mt-3 pt-2 border-t border-gray-200">
+                <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-indigo-600 p-1 rounded transition-colors">
+                  • KM/H to MPH (Most Popular)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-indigo-600 p-1 rounded transition-colors">
+                  • MPH to KM/H (Trending)
+                </button>
+              </div>
+            </div>
+          </details>
+
+          {/* Pressure Conversions */}
+          <details className="group">
+            <summary className="cursor-pointer text-sm font-medium text-gray-700 mb-2 hover:text-pink-600 flex items-center justify-between p-2 rounded-md hover:bg-gray-100">
+              <span>Pressure</span>
+              <svg
+                className="w-4 h-4 transition-transform group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </summary>
+            <div className="space-y-1 ml-4 mt-2">
+              <button className="block w-full text-left text-sm text-pink-600 hover:text-pink-800 hover:bg-pink-50 p-2 rounded-md transition-colors">
+                Pascal ↔ PSI
+              </button>
+              <button className="block w-full text-left text-sm text-pink-600 hover:text-pink-800 hover:bg-pink-50 p-2 rounded-md transition-colors">
+                Bar ↔ Atmosphere
+              </button>
+              <button className="block w-full text-left text-sm text-pink-600 hover:text-pink-800 hover:bg-pink-50 p-2 rounded-md transition-colors">
+                Torr ↔ mmHg
+              </button>
+              <div className="mt-3 pt-2 border-t border-gray-200">
+                <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-pink-600 p-1 rounded transition-colors">
+                  • PSI to Bar (Most Popular)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-pink-600 p-1 rounded transition-colors">
+                  • Bar to PSI (Trending)
+                </button>
+              </div>
+            </div>
+          </details>
+
+          {/* Energy Conversions */}
+          <details className="group">
+            <summary className="cursor-pointer text-sm font-medium text-gray-700 mb-2 hover:text-orange-600 flex items-center justify-between p-2 rounded-md hover:bg-gray-100">
+              <span>Energy</span>
+              <svg
+                className="w-4 h-4 transition-transform group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </summary>
+            <div className="space-y-1 ml-4 mt-2">
+              <button className="block w-full text-left text-sm text-orange-600 hover:text-orange-800 hover:bg-orange-50 p-2 rounded-md transition-colors">
+                Joules ↔ Calories
+              </button>
+              <button className="block w-full text-left text-sm text-orange-600 hover:text-orange-800 hover:bg-orange-50 p-2 rounded-md transition-colors">
+                kWh ↔ BTU
+              </button>
+              <button className="block w-full text-left text-sm text-orange-600 hover:text-orange-800 hover:bg-orange-50 p-2 rounded-md transition-colors">
+                Watts ↔ Horsepower
+              </button>
+              <div className="mt-3 pt-2 border-t border-gray-200">
+                <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-orange-600 p-1 rounded transition-colors">
+                  • Calories to Joules (Most Popular)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-orange-600 p-1 rounded transition-colors">
+                  • kWh to BTU (Trending)
+                </button>
+              </div>
+            </div>
+          </details>
+
+          {/* Data Storage Conversions */}
+          <details className="group">
+            <summary className="cursor-pointer text-sm font-medium text-gray-700 mb-2 hover:text-cyan-600 flex items-center justify-between p-2 rounded-md hover:bg-gray-100">
+              <span>Data Storage</span>
+              <svg
+                className="w-4 h-4 transition-transform group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </summary>
+            <div className="space-y-1 ml-4 mt-2">
+              <button className="block w-full text-left text-sm text-cyan-600 hover:text-cyan-800 hover:bg-cyan-50 p-2 rounded-md transition-colors">
+                Bytes ↔ Bits
+              </button>
+              <button className="block w-full text-left text-sm text-cyan-600 hover:text-cyan-800 hover:bg-cyan-50 p-2 rounded-md transition-colors">
+                KB ↔ MB
+              </button>
+              <button className="block w-full text-left text-sm text-cyan-600 hover:text-cyan-800 hover:bg-cyan-50 p-2 rounded-md transition-colors">
+                GB ↔ TB
+              </button>
+              <div className="mt-3 pt-2 border-t border-gray-200">
+                <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-cyan-600 p-1 rounded transition-colors">
+                  • GB to MB (Most Popular)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-cyan-600 p-1 rounded transition-colors">
+                  • MB to KB (Trending)
+                </button>
+              </div>
+            </div>
+          </details>
+
+          {/* Time Conversions */}
+          <details className="group">
+            <summary className="cursor-pointer text-sm font-medium text-gray-700 mb-2 hover:text-teal-600 flex items-center justify-between p-2 rounded-md hover:bg-gray-100">
+              <span>Time</span>
+              <svg
+                className="w-4 h-4 transition-transform group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </summary>
+            <div className="space-y-1 ml-4 mt-2">
+              <button className="block w-full text-left text-sm text-teal-600 hover:text-teal-800 hover:bg-teal-50 p-2 rounded-md transition-colors">
+                Hours ↔ Minutes
+              </button>
+              <button className="block w-full text-left text-sm text-teal-600 hover:text-teal-800 hover:bg-teal-50 p-2 rounded-md transition-colors">
+                Days ↔ Hours
+              </button>
+              <button className="block w-full text-left text-sm text-teal-600 hover:text-teal-800 hover:bg-teal-50 p-2 rounded-md transition-colors">
+                Years ↔ Days
+              </button>
+              <div className="mt-3 pt-2 border-t border-gray-200">
+                <p className="text-xs text-gray-500 mb-1">Top Converters:</p>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-teal-600 p-1 rounded transition-colors">
+                  • Hours to Minutes (Most Popular)
+                </button>
+                <button className="block w-full text-left text-xs text-gray-600 hover:text-teal-600 p-1 rounded transition-colors">
+                  • Days to Hours (Trending)
+                </button>
+              </div>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </aside>
+  )
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,203 +431,7 @@ html {
       </head>
       <body>
         <div className="flex min-h-screen">
-          <aside className="w-80 bg-gray-50 border-r border-gray-200 overflow-y-auto">
-            <div className="p-4">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">All Converters</h2>
-              <nav className="space-y-2">
-                {/* Length Conversions */}
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Length</h3>
-                  <div className="space-y-1 ml-2">
-                    <a href="#length" className="block text-sm text-blue-600 hover:text-blue-800">
-                      Meters ↔ Feet
-                    </a>
-                    <a href="#length" className="block text-sm text-blue-600 hover:text-blue-800">
-                      CM ↔ Inches
-                    </a>
-                    <a href="#length" className="block text-sm text-blue-600 hover:text-blue-800">
-                      Kilometers ↔ Miles
-                    </a>
-                    <a href="#length" className="block text-sm text-blue-600 hover:text-blue-800">
-                      Millimeters ↔ Inches
-                    </a>
-                    <a href="#length" className="block text-sm text-blue-600 hover:text-blue-800">
-                      Yards ↔ Meters
-                    </a>
-                    <a href="#length" className="block text-sm text-blue-600 hover:text-blue-800">
-                      Nautical Miles ↔ Miles
-                    </a>
-                  </div>
-                </div>
-
-                {/* Weight/Mass Conversions */}
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Weight & Mass</h3>
-                  <div className="space-y-1 ml-2">
-                    <a href="#weight" className="block text-sm text-green-600 hover:text-green-800">
-                      Kilograms ↔ Pounds
-                    </a>
-                    <a href="#weight" className="block text-sm text-green-600 hover:text-green-800">
-                      Grams ↔ Ounces
-                    </a>
-                    <a href="#weight" className="block text-sm text-green-600 hover:text-green-800">
-                      Tons ↔ Pounds
-                    </a>
-                    <a href="#weight" className="block text-sm text-green-600 hover:text-green-800">
-                      Stones ↔ Kilograms
-                    </a>
-                    <a href="#weight" className="block text-sm text-green-600 hover:text-green-800">
-                      Carats ↔ Grams
-                    </a>
-                  </div>
-                </div>
-
-                {/* Temperature Conversions */}
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Temperature</h3>
-                  <div className="space-y-1 ml-2">
-                    <a href="#temperature" className="block text-sm text-red-600 hover:text-red-800">
-                      Celsius ↔ Fahrenheit
-                    </a>
-                    <a href="#temperature" className="block text-sm text-red-600 hover:text-red-800">
-                      Kelvin ↔ Celsius
-                    </a>
-                    <a href="#temperature" className="block text-sm text-red-600 hover:text-red-800">
-                      Rankine ↔ Fahrenheit
-                    </a>
-                  </div>
-                </div>
-
-                {/* Volume Conversions */}
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Volume</h3>
-                  <div className="space-y-1 ml-2">
-                    <a href="#volume" className="block text-sm text-purple-600 hover:text-purple-800">
-                      Liters ↔ Gallons
-                    </a>
-                    <a href="#volume" className="block text-sm text-purple-600 hover:text-purple-800">
-                      Milliliters ↔ Fluid Ounces
-                    </a>
-                    <a href="#volume" className="block text-sm text-purple-600 hover:text-purple-800">
-                      Cubic Meters ↔ Cubic Feet
-                    </a>
-                    <a href="#volume" className="block text-sm text-purple-600 hover:text-purple-800">
-                      Cups ↔ Milliliters
-                    </a>
-                    <a href="#volume" className="block text-sm text-purple-600 hover:text-purple-800">
-                      Pints ↔ Liters
-                    </a>
-                    <a href="#volume" className="block text-sm text-purple-600 hover:text-purple-800">
-                      Quarts ↔ Liters
-                    </a>
-                  </div>
-                </div>
-
-                {/* Area Conversions */}
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Area</h3>
-                  <div className="space-y-1 ml-2">
-                    <a href="#area" className="block text-sm text-yellow-600 hover:text-yellow-800">
-                      Square Meters ↔ Square Feet
-                    </a>
-                    <a href="#area" className="block text-sm text-yellow-600 hover:text-yellow-800">
-                      Acres ↔ Square Meters
-                    </a>
-                    <a href="#area" className="block text-sm text-yellow-600 hover:text-yellow-800">
-                      Hectares ↔ Acres
-                    </a>
-                    <a href="#area" className="block text-sm text-yellow-600 hover:text-yellow-800">
-                      Square Kilometers ↔ Square Miles
-                    </a>
-                  </div>
-                </div>
-
-                {/* Speed Conversions */}
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Speed</h3>
-                  <div className="space-y-1 ml-2">
-                    <a href="#speed" className="block text-sm text-indigo-600 hover:text-indigo-800">
-                      KM/H ↔ MPH
-                    </a>
-                    <a href="#speed" className="block text-sm text-indigo-600 hover:text-indigo-800">
-                      M/S ↔ FT/S
-                    </a>
-                    <a href="#speed" className="block text-sm text-indigo-600 hover:text-indigo-800">
-                      Knots ↔ MPH
-                    </a>
-                    <a href="#speed" className="block text-sm text-indigo-600 hover:text-indigo-800">
-                      Mach ↔ KM/H
-                    </a>
-                  </div>
-                </div>
-
-                {/* Pressure Conversions */}
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Pressure</h3>
-                  <div className="space-y-1 ml-2">
-                    <a href="#pressure" className="block text-sm text-pink-600 hover:text-pink-800">
-                      Pascal ↔ PSI
-                    </a>
-                    <a href="#pressure" className="block text-sm text-pink-600 hover:text-pink-800">
-                      Bar ↔ Atmosphere
-                    </a>
-                    <a href="#pressure" className="block text-sm text-pink-600 hover:text-pink-800">
-                      Torr ↔ mmHg
-                    </a>
-                  </div>
-                </div>
-
-                {/* Energy Conversions */}
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Energy</h3>
-                  <div className="space-y-1 ml-2">
-                    <a href="#energy" className="block text-sm text-orange-600 hover:text-orange-800">
-                      Joules ↔ Calories
-                    </a>
-                    <a href="#energy" className="block text-sm text-orange-600 hover:text-orange-800">
-                      kWh ↔ BTU
-                    </a>
-                    <a href="#energy" className="block text-sm text-orange-600 hover:text-orange-800">
-                      Watts ↔ Horsepower
-                    </a>
-                  </div>
-                </div>
-
-                {/* Data Storage Conversions */}
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Data Storage</h3>
-                  <div className="space-y-1 ml-2">
-                    <a href="#data" className="block text-sm text-cyan-600 hover:text-cyan-800">
-                      Bytes ↔ Bits
-                    </a>
-                    <a href="#data" className="block text-sm text-cyan-600 hover:text-cyan-800">
-                      KB ↔ MB
-                    </a>
-                    <a href="#data" className="block text-sm text-cyan-600 hover:text-cyan-800">
-                      GB ↔ TB
-                    </a>
-                  </div>
-                </div>
-
-                {/* Time Conversions */}
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Time</h3>
-                  <div className="space-y-1 ml-2">
-                    <a href="#time" className="block text-sm text-teal-600 hover:text-teal-800">
-                      Hours ↔ Minutes
-                    </a>
-                    <a href="#time" className="block text-sm text-teal-600 hover:text-teal-800">
-                      Days ↔ Hours
-                    </a>
-                    <a href="#time" className="block text-sm text-teal-600 hover:text-teal-800">
-                      Years ↔ Days
-                    </a>
-                  </div>
-                </div>
-              </nav>
-            </div>
-          </aside>
-
+          <InteractiveSidebar />
           <main className="flex-1">
             <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
           </main>
