@@ -97,7 +97,16 @@ export default function ConverterPage({ params }: ConverterPageProps) {
 
         {/* Converter Widget */}
         <section className="max-w-2xl mx-auto">
-          <ConverterWidget converter={converter} title={title} />
+          <ConverterWidget
+            fromUnit={converter.from}
+            toUnit={converter.to}
+            fromSymbol={converter.symbols.from}
+            toSymbol={converter.symbols.to}
+            availableUnits={[
+              { symbol: converter.symbols.from, name: converter.from },
+              { symbol: converter.symbols.to, name: converter.to },
+            ]}
+          />
         </section>
 
         {/* Common Conversions Table */}
