@@ -1,27 +1,32 @@
 "use client"
-
-import Link from "next/link"
 import { useState } from "react"
 
-// Unit conversion data
 const unitCategories = {
   length: {
     name: "Length",
     units: {
-      cm: { name: "Centimeters", factor: 1 },
-      inches: { name: "Inches", factor: 2.54 },
-      feet: { name: "Feet", factor: 30.48 },
-      meters: { name: "Meters", factor: 100 },
-      mm: { name: "Millimeters", factor: 0.1 },
+      mm: { name: "Millimeters", factor: 0.001 },
+      cm: { name: "Centimeters", factor: 0.01 },
+      m: { name: "Meters", factor: 1 },
+      km: { name: "Kilometers", factor: 1000 },
+      inches: { name: "Inches", factor: 0.0254 },
+      feet: { name: "Feet", factor: 0.3048 },
+      yards: { name: "Yards", factor: 0.9144 },
+      miles: { name: "Miles", factor: 1609.34 },
+      nauticalMiles: { name: "Nautical Miles", factor: 1852 },
     },
   },
   weight: {
-    name: "Weight",
+    name: "Weight & Mass",
     units: {
+      mg: { name: "Milligrams", factor: 0.000001 },
+      g: { name: "Grams", factor: 0.001 },
       kg: { name: "Kilograms", factor: 1 },
-      lbs: { name: "Pounds", factor: 0.453592 },
-      grams: { name: "Grams", factor: 0.001 },
+      tons: { name: "Metric Tons", factor: 1000 },
       oz: { name: "Ounces", factor: 0.0283495 },
+      lbs: { name: "Pounds", factor: 0.453592 },
+      stones: { name: "Stones", factor: 6.35029 },
+      carats: { name: "Carats", factor: 0.0002 },
     },
   },
   temperature: {
@@ -30,21 +35,102 @@ const unitCategories = {
       celsius: { name: "Celsius", factor: 1 },
       fahrenheit: { name: "Fahrenheit", factor: 1 },
       kelvin: { name: "Kelvin", factor: 1 },
+      rankine: { name: "Rankine", factor: 1 },
     },
   },
   volume: {
     name: "Volume",
     units: {
-      liters: { name: "Liters", factor: 1 },
+      ml: { name: "Milliliters", factor: 0.001 },
+      l: { name: "Liters", factor: 1 },
+      m3: { name: "Cubic Meters", factor: 1000 },
+      flOz: { name: "Fluid Ounces", factor: 0.0295735 },
+      cups: { name: "Cups", factor: 0.236588 },
+      pints: { name: "Pints", factor: 0.473176 },
+      quarts: { name: "Quarts", factor: 0.946353 },
       gallons: { name: "Gallons", factor: 3.78541 },
+      ft3: { name: "Cubic Feet", factor: 28.3168 },
+    },
+  },
+  area: {
+    name: "Area",
+    units: {
+      mm2: { name: "Square Millimeters", factor: 0.000001 },
+      cm2: { name: "Square Centimeters", factor: 0.0001 },
+      m2: { name: "Square Meters", factor: 1 },
+      km2: { name: "Square Kilometers", factor: 1000000 },
+      in2: { name: "Square Inches", factor: 0.00064516 },
+      ft2: { name: "Square Feet", factor: 0.092903 },
+      acres: { name: "Acres", factor: 4046.86 },
+      hectares: { name: "Hectares", factor: 10000 },
+      miles2: { name: "Square Miles", factor: 2590000 },
+    },
+  },
+  speed: {
+    name: "Speed",
+    units: {
+      ms: { name: "Meters/Second", factor: 1 },
+      kmh: { name: "Kilometers/Hour", factor: 0.277778 },
+      mph: { name: "Miles/Hour", factor: 0.44704 },
+      fts: { name: "Feet/Second", factor: 0.3048 },
+      knots: { name: "Knots", factor: 0.514444 },
+      mach: { name: "Mach", factor: 343 },
+    },
+  },
+  pressure: {
+    name: "Pressure",
+    units: {
+      pa: { name: "Pascal", factor: 1 },
+      kpa: { name: "Kilopascal", factor: 1000 },
+      bar: { name: "Bar", factor: 100000 },
+      psi: { name: "PSI", factor: 6894.76 },
+      atm: { name: "Atmosphere", factor: 101325 },
+      torr: { name: "Torr", factor: 133.322 },
+      mmhg: { name: "mmHg", factor: 133.322 },
+    },
+  },
+  energy: {
+    name: "Energy & Power",
+    units: {
+      j: { name: "Joules", factor: 1 },
+      kj: { name: "Kilojoules", factor: 1000 },
+      cal: { name: "Calories", factor: 4.184 },
+      kcal: { name: "Kilocalories", factor: 4184 },
+      wh: { name: "Watt Hours", factor: 3600 },
+      kwh: { name: "Kilowatt Hours", factor: 3600000 },
+      btu: { name: "BTU", factor: 1055.06 },
+      hp: { name: "Horsepower", factor: 745.7 },
+    },
+  },
+  data: {
+    name: "Data Storage",
+    units: {
+      bits: { name: "Bits", factor: 1 },
+      bytes: { name: "Bytes", factor: 8 },
+      kb: { name: "Kilobytes", factor: 8192 },
+      mb: { name: "Megabytes", factor: 8388608 },
+      gb: { name: "Gigabytes", factor: 8589934592 },
+      tb: { name: "Terabytes", factor: 8796093022208 },
+    },
+  },
+  time: {
+    name: "Time",
+    units: {
+      seconds: { name: "Seconds", factor: 1 },
+      minutes: { name: "Minutes", factor: 60 },
+      hours: { name: "Hours", factor: 3600 },
+      days: { name: "Days", factor: 86400 },
+      weeks: { name: "Weeks", factor: 604800 },
+      months: { name: "Months", factor: 2629746 },
+      years: { name: "Years", factor: 31556952 },
     },
   },
 }
 
 export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState("length")
-  const [fromUnit, setFromUnit] = useState("cm")
-  const [toUnit, setToUnit] = useState("inches")
+  const [fromUnit, setFromUnit] = useState("m")
+  const [toUnit, setToUnit] = useState("feet")
   const [fromValue, setFromValue] = useState("")
   const [toValue, setToValue] = useState("")
 
@@ -59,22 +145,18 @@ export default function HomePage() {
       let celsius = num
       if (from === "fahrenheit") celsius = ((num - 32) * 5) / 9
       if (from === "kelvin") celsius = num - 273.15
+      if (from === "rankine") celsius = ((num - 491.67) * 5) / 9
 
       if (to === "celsius") return celsius.toFixed(2)
       if (to === "fahrenheit") return ((celsius * 9) / 5 + 32).toFixed(2)
       if (to === "kelvin") return (celsius + 273.15).toFixed(2)
-    } else if (category === "volume") {
-      // Special volume conversion logic
-      const fromFactor = categoryData.units[from as keyof typeof categoryData.units]?.factor || 1
-      const toFactor = categoryData.units[to as keyof typeof categoryData.units]?.factor || 1
-      const result = (num * fromFactor) / toFactor
-      return result.toFixed(4).replace(/\.?0+$/, "")
+      if (to === "rankine") return ((celsius * 9) / 5 + 491.67).toFixed(2)
     } else {
       // Standard factor-based conversion
       const fromFactor = categoryData.units[from as keyof typeof categoryData.units]?.factor || 1
       const toFactor = categoryData.units[to as keyof typeof categoryData.units]?.factor || 1
       const result = (num * fromFactor) / toFactor
-      return result.toFixed(4).replace(/\.?0+$/, "")
+      return result.toFixed(6).replace(/\.?0+$/, "")
     }
 
     return ""
@@ -104,13 +186,14 @@ export default function HomePage() {
   const currentUnits = unitCategories[selectedCategory as keyof typeof unitCategories].units
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-6 py-8">
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Free Online Unit Converter – Convert Any Measurement Instantly
+          Universal Unit Converter – Convert Any Measurement Instantly
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Convert between different units of measurement quickly and accurately with our free online conversion tools.
+          Convert between all types of measurements with our comprehensive conversion tools. From length and weight to
+          energy and data storage.
         </p>
       </div>
 
@@ -203,82 +286,51 @@ export default function HomePage() {
       </div>
 
       <div className="mb-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Popular Converters</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Quick Access Converters</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Link
-            href="/Converters/CommonConversions/CmToInches"
-            className="block p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors"
-          >
-            <div className="font-semibold text-blue-900">CM to Inches</div>
-            <div className="text-sm text-blue-700">Convert centimeters to inches</div>
-          </Link>
-
-          <Link
-            href="/Converters/Weight/KilogramsToPounds"
-            className="block p-4 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 transition-colors"
-          >
-            <div className="font-semibold text-green-900">KG to LBS</div>
-            <div className="text-sm text-green-700">Convert kilograms to pounds</div>
-          </Link>
-
-          <Link
-            href="/Converters/Temperature/FahrenheitToCelsius"
-            className="block p-4 bg-red-50 border border-red-200 rounded-lg hover:bg-red-100 transition-colors"
-          >
-            <div className="font-semibold text-red-900">°F to °C</div>
-            <div className="text-sm text-red-700">Convert Fahrenheit to Celsius</div>
-          </Link>
-
-          <Link
-            href="/Converters/Volume/LitersToGallons"
-            className="block p-4 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 transition-colors"
-          >
-            <div className="font-semibold text-purple-900">Liters to Gallons</div>
-            <div className="text-sm text-purple-700">Convert liters to gallons</div>
-          </Link>
-
-          <Link
-            href="/Converters/CommonConversions/CmToFeet"
-            className="block p-4 bg-yellow-50 border border-yellow-200 rounded-lg hover:bg-yellow-100 transition-colors"
-          >
-            <div className="font-semibold text-yellow-900">Meters to Feet</div>
-            <div className="text-sm text-yellow-700">Convert meters to feet</div>
-          </Link>
+          {Object.entries(unitCategories).map(([key, category]) => (
+            <button
+              key={key}
+              onClick={() => handleCategoryChange(key)}
+              className={`p-4 border rounded-lg transition-colors text-left ${
+                selectedCategory === key
+                  ? "bg-blue-100 border-blue-300"
+                  : "bg-gray-50 border-gray-200 hover:bg-gray-100"
+              }`}
+            >
+              <div className="font-semibold text-gray-900">{category.name}</div>
+              <div className="text-sm text-gray-600">{Object.keys(category.units).length} units available</div>
+            </button>
+          ))}
         </div>
       </div>
 
       <div className="bg-gray-50 p-8 rounded-lg">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          Free Online Unit Converter – Fast & Accurate Conversions
+          Complete Unit Conversion Suite – All Measurements in One Place
         </h2>
 
         <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
           <p>
-            Our <strong>free online unit converter</strong> makes it easy to convert between different units of
-            measurement instantly. Whether you need to <strong>convert cm to inches</strong>, use our{" "}
-            <strong>kg to lbs converter</strong>, or access our
-            <strong>temperature conversion tool</strong>, we provide fast and accurate results every time.
+            Our <strong>universal unit converter</strong> is the most comprehensive conversion tool available online.
+            Convert between{" "}
+            <strong>length, weight, temperature, volume, area, speed, pressure, energy, data storage, and time</strong>
+            units with precision and ease. Whether you need metric to imperial conversions or specialized scientific
+            units, our converter handles them all.
           </p>
 
           <p>
-            This comprehensive conversion platform supports <strong>length, weight, area, volume converters</strong> and
-            more. Our tools are perfect for students, professionals, and anyone who needs reliable unit conversions.
-            From simple everyday conversions to complex scientific calculations, our converter handles it all with
-            precision.
+            From everyday conversions like <strong>centimeters to inches</strong> and{" "}
+            <strong>kilograms to pounds</strong>
+            to complex scientific measurements like <strong>pascals to PSI</strong> and <strong>joules to BTU</strong>,
+            our tool provides accurate results instantly. Perfect for students, engineers, scientists, and professionals
+            across all industries.
           </p>
 
           <p>
-            Why choose our unit converter? It's completely free, works on any device, and provides instant results. No
-            downloads or installations required – simply enter your values and get accurate conversions immediately. Our
-            converter supports the most commonly used units across multiple measurement systems including metric,
-            imperial, and scientific units.
-          </p>
-
-          <p>
-            Save time and eliminate calculation errors with our user-friendly interface. Whether you're converting
-            measurements for cooking, construction, science projects, or international business, our reliable conversion
-            tools ensure you get the right results every time. Start converting now and experience the convenience of
-            our professional-grade unit converter.
+            Features include bidirectional conversion, high precision calculations, support for both metric and imperial
+            systems, and an intuitive interface that works on all devices. No registration required – start converting
+            measurements immediately with our free, professional-grade conversion tools.
           </p>
         </div>
       </div>
