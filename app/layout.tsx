@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 function InteractiveSidebar() {
   return (
-    <aside className="w-80 bg-gray-50 border-r border-gray-200 overflow-y-auto">
+    <aside className="w-80 bg-gray-50 border-r border-gray-200 h-screen overflow-y-auto fixed left-0 top-0">
       <div className="p-4">
         <Link href="/" className="block hover:text-blue-600 transition-colors">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">All Converters</h2>
@@ -624,7 +624,7 @@ html {
       <body>
         <div className="flex min-h-screen">
           <InteractiveSidebar />
-          <main className="flex-1">
+          <main className="flex-1 ml-80">
             <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
           </main>
         </div>
