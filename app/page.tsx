@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import Link from "next/link"
 
 const unitCategories = {
   length: {
@@ -185,6 +186,19 @@ export default function HomePage() {
 
   const currentUnits = unitCategories[selectedCategory as keyof typeof unitCategories].units
 
+  const popularConverters = {
+    length: "meters-to-feet",
+    weight: "kilograms-to-pounds",
+    temperature: "celsius-to-fahrenheit",
+    volume: "liters-to-gallons",
+    area: "square-meters-to-square-feet",
+    speed: "kilometers-per-hour-to-miles-per-hour",
+    pressure: "bar-to-psi",
+    energy: "joules-to-calories",
+    data: "gigabytes-to-megabytes",
+    time: "hours-to-minutes",
+  }
+
   return (
     <div className="max-w-4xl mx-auto px-6 py-8">
       <div className="text-center mb-8">
@@ -289,18 +303,16 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Quick Access Converters</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {Object.entries(unitCategories).map(([key, category]) => (
-            <button
+            <Link
               key={key}
-              onClick={() => handleCategoryChange(key)}
-              className={`p-4 border rounded-lg transition-colors text-left ${
-                selectedCategory === key
-                  ? "bg-blue-100 border-blue-300"
-                  : "bg-gray-50 border-gray-200 hover:bg-gray-100"
+              href={`/convert/${popularConverters[key as keyof typeof popularConverters]}`}
+              className={`block p-4 border rounded-lg transition-colors text-left hover:bg-blue-50 hover:border-blue-300 ${
+                selectedCategory === key ? "bg-blue-100 border-blue-300" : "bg-gray-50 border-gray-200"
               }`}
             >
               <div className="font-semibold text-gray-900">{category.name}</div>
               <div className="text-sm text-gray-600">{Object.keys(category.units).length} units available</div>
-            </button>
+            </Link>
           ))}
         </div>
       </div>
