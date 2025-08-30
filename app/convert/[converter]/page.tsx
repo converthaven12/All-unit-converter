@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { use } from "react"
+import { useParams } from "next/navigation"
 
 // Conversion data and functions
 const conversions = {
@@ -937,31 +937,33 @@ const conversions = {
   },
 }
 
-export default function ConverterPage({ params }: { params: Promise<{ converter: string }> }) {
-  const resolvedParams = use(params)
+export default function ConverterPage() {
+  const params = useParams()
+  const converter = params.converter as string
+
   const [fromValue, setFromValue] = useState("")
   const [toValue, setToValue] = useState("")
   const [isReversed, setIsReversed] = useState(false)
 
-  const converterData = conversions[resolvedParams.converter as keyof typeof conversions]
+  const conversionData = conversions[converter as keyof typeof conversions]
 
   useEffect(() => {
     if (fromValue && !isNaN(Number(fromValue))) {
-      const result = isReversed ? converterData.reverse(Number(fromValue)) : converterData.convert(Number(fromValue))
+      const result = isReversed ? conversionData.reverse(Number(fromValue)) : conversionData.convert(Number(fromValue))
       setToValue(result.toFixed(6).replace(/\.?0+$/, ""))
     } else {
       setToValue("")
     }
-  }, [fromValue, isReversed, converterData])
+  }, [fromValue, isReversed, conversionData])
 
-  if (!converterData) {
+  if (!conversionData) {
     return <div className="p-8">Converter not found</div>
   }
 
-  const currentFromUnit = isReversed ? converterData.toUnit : converterData.fromUnit
-  const currentToUnit = isReversed ? converterData.fromUnit : converterData.toUnit
-  const currentFromSymbol = isReversed ? converterData.toSymbol : converterData.fromSymbol
-  const currentToSymbol = isReversed ? converterData.fromSymbol : converterData.toSymbol
+  const currentFromUnit = isReversed ? conversionData.toUnit : conversionData.fromUnit
+  const currentToUnit = isReversed ? conversionData.fromUnit : conversionData.toUnit
+  const currentFromSymbol = isReversed ? conversionData.toSymbol : conversionData.fromSymbol
+  const currentToSymbol = isReversed ? conversionData.fromSymbol : conversionData.toSymbol
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -970,10 +972,10 @@ export default function ConverterPage({ params }: { params: Promise<{ converter:
           Home
         </Link>
         <span className="mx-2">›</span>
-        <span className="text-gray-900">{converterData.title}</span>
+        <span className="text-gray-900">{conversionData.title}</span>
       </nav>
 
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">{converterData.title}</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-8">{conversionData.title}</h1>
 
       <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
         <div className="grid md:grid-cols-2 gap-6">
@@ -1019,19 +1021,417 @@ export default function ConverterPage({ params }: { params: Promise<{ converter:
       </div>
 
       <div className="bg-gray-50 rounded-lg p-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Related {converterData.category} Converters</h2>
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">Related {conversionData.category} Converters</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {converterData.relatedConverters.map((converter) => (
+          {conversionData.relatedConverters.map((converter) => (
             <Link
               key={converter.slug}
               href={`/convert/${converter.slug}`}
               className="block p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow text-center text-sm text-blue-600 hover:text-blue-800"
             >
-              {converter.name}
+              {converter.title}
             </Link>
           ))}
         </div>
       </div>
+
+      <div className="mt-12 space-y-12">
+        {/* Introduction Section */}
+        <section className="prose prose-lg max-w-none">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            About {currentFromUnit} to {currentToUnit} Conversion
+          </h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Converting {currentFromUnit.toLowerCase()} to {currentToUnit.toLowerCase()} is a common measurement
+            conversion that professionals, students, and everyday users frequently need. Whether you're working in
+            engineering, cooking, construction, or academic studies, understanding how to accurately convert between{" "}
+            {currentFromUnit.toLowerCase()} and {currentToUnit.toLowerCase()}
+            is essential for precise calculations and measurements.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            This comprehensive guide provides you with the exact conversion formula, step-by-step examples, and
+            practical tips to master {currentFromUnit.toLowerCase()} to {currentToUnit.toLowerCase()} conversions. Our
+            calculator above gives you instant results, but understanding the underlying mathematics helps you verify
+            calculations and work confidently with these units in any situation.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            The relationship between {currentFromUnit.toLowerCase()} and {currentToUnit.toLowerCase()} is based on
+            standardized measurement systems that ensure consistency across different applications and industries. By
+            learning this conversion, you'll be better equipped to handle measurements in both units and understand
+            their practical applications.
+          </p>
+        </section>
+
+        {/* Conversion Formula Section */}
+        <section className="bg-white rounded-2xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Conversion Formula</h2>
+          <p className="text-gray-700 mb-4">
+            The mathematical formula to convert {currentFromUnit.toLowerCase()} to {currentToUnit.toLowerCase()} is:
+          </p>
+          <div className="bg-gray-100 rounded-lg p-4 font-mono text-sm overflow-x-auto">
+            <code>
+              {currentToUnit} = {currentFromUnit} ×{" "}
+              {conversionData
+                .convert(1)
+                .toFixed(6)
+                .replace(/\.?0+$/, "") || "conversion_factor"}
+              {conversionData.offset ? ` + ${conversionData.offset}` : ""}
+            </code>
+          </div>
+          <p className="text-gray-600 text-sm mt-3">
+            Where the conversion factor represents the mathematical relationship between these two units of measurement.
+          </p>
+        </section>
+
+        {/* Quick Conversion Table */}
+        <section className="bg-white rounded-2xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Quick Conversion Table</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-gray-50">
+                  <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">
+                    {currentFromUnit} ({currentFromSymbol})
+                  </th>
+                  <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">
+                    {currentToUnit} ({currentToSymbol})
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[0.1, 0.5, 1, 2, 5, 10, 20, 25, 50, 75, 100, 250, 500, 750, 1000, 2000, 5000, 10000].map((value) => (
+                  <tr key={value} className="hover:bg-gray-50">
+                    <td className="border border-gray-200 px-4 py-3 text-gray-700">{value}</td>
+                    <td className="border border-gray-200 px-4 py-3 text-gray-700">
+                      {conversionData
+                        .convert(value)
+                        .toFixed(6)
+                        .replace(/\.?0+$/, "")}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Step-by-Step Examples */}
+        <section className="bg-white rounded-2xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Step-by-Step Conversion Examples</h2>
+
+          <div className="space-y-8">
+            <div className="border-l-4 border-blue-500 pl-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Example 1: Convert 10 {currentFromUnit}</h3>
+              <div className="space-y-2 text-gray-700">
+                <p>
+                  <strong>Given:</strong> 10 {currentFromSymbol}
+                </p>
+                <p>
+                  <strong>Formula:</strong> {currentToUnit} = {currentFromUnit} ×{" "}
+                  {conversionData
+                    .convert(1)
+                    .toFixed(6)
+                    .replace(/\.?0+$/, "") || "conversion_factor"}
+                </p>
+                <p>
+                  <strong>Calculation:</strong> {currentToUnit} = 10 ×{" "}
+                  {conversionData
+                    .convert(1)
+                    .toFixed(6)
+                    .replace(/\.?0+$/, "") || "conversion_factor"}
+                </p>
+                <p>
+                  <strong>Result:</strong> 10 {currentFromSymbol} = {conversionData.convert(10).toFixed(4)}{" "}
+                  {currentToSymbol}
+                </p>
+              </div>
+            </div>
+
+            <div className="border-l-4 border-green-500 pl-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Example 2: Convert 25.5 {currentFromUnit}</h3>
+              <div className="space-y-2 text-gray-700">
+                <p>
+                  <strong>Given:</strong> 25.5 {currentFromSymbol}
+                </p>
+                <p>
+                  <strong>Formula:</strong> {currentToUnit} = {currentFromUnit} ×{" "}
+                  {conversionData
+                    .convert(1)
+                    .toFixed(6)
+                    .replace(/\.?0+$/, "") || "conversion_factor"}
+                </p>
+                <p>
+                  <strong>Calculation:</strong> {currentToUnit} = 25.5 ×{" "}
+                  {conversionData
+                    .convert(1)
+                    .toFixed(6)
+                    .replace(/\.?0+$/, "") || "conversion_factor"}
+                </p>
+                <p>
+                  <strong>Result:</strong> 25.5 {currentFromSymbol} = {conversionData.convert(25.5).toFixed(4)}{" "}
+                  {currentToSymbol}
+                </p>
+              </div>
+            </div>
+
+            <div className="border-l-4 border-purple-500 pl-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Example 3: Convert 100 {currentFromUnit}</h3>
+              <div className="space-y-2 text-gray-700">
+                <p>
+                  <strong>Given:</strong> 100 {currentFromSymbol}
+                </p>
+                <p>
+                  <strong>Formula:</strong> {currentToUnit} = {currentFromUnit} ×{" "}
+                  {conversionData
+                    .convert(1)
+                    .toFixed(6)
+                    .replace(/\.?0+$/, "") || "conversion_factor"}
+                </p>
+                <p>
+                  <strong>Calculation:</strong> {currentToUnit} = 100 ×{" "}
+                  {conversionData
+                    .convert(1)
+                    .toFixed(6)
+                    .replace(/\.?0+$/, "") || "conversion_factor"}
+                </p>
+                <p>
+                  <strong>Result:</strong> 100 {currentFromSymbol} = {conversionData.convert(100).toFixed(4)}{" "}
+                  {currentToSymbol}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Tips & Best Practices */}
+        <section className="bg-white rounded-2xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Tips & Best Practices</h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 text-red-600">Common Mistakes to Avoid</h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-red-500 mr-2">×</span>
+                  <span>
+                    Confusing the conversion direction - always double-check which unit you're converting from and to
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-500 mr-2">×</span>
+                  <span>Using outdated or incorrect conversion factors - always use standardized values</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-500 mr-2">×</span>
+                  <span>
+                    Rounding too early in multi-step calculations - keep full precision until the final result
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-500 mr-2">×</span>
+                  <span>Forgetting to include proper units in your final answer</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 text-green-600">Best Practices</h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>Always verify your results using a reliable calculator or conversion tool</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>Keep track of significant figures based on your input precision</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>Understand the context - some applications may require specific precision levels</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>Practice with common values to develop intuition for reasonable results</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="bg-white rounded-2xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+
+          <div className="space-y-6">
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                How do I convert {currentFromUnit.toLowerCase()} to {currentToUnit.toLowerCase()}?
+              </h3>
+              <p className="text-gray-700">
+                To convert {currentFromUnit.toLowerCase()} to {currentToUnit.toLowerCase()}, multiply the{" "}
+                {currentFromUnit.toLowerCase()} value by the conversion factor. Use our calculator above for instant
+                results, or apply the formula: {currentToUnit} = {currentFromUnit} ×{" "}
+                {conversionData
+                  .convert(1)
+                  .toFixed(6)
+                  .replace(/\.?0+$/, "") || "conversion_factor"}
+                .
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                How do I convert {currentToUnit.toLowerCase()} back to {currentFromUnit.toLowerCase()}?
+              </h3>
+              <p className="text-gray-700">
+                To convert {currentToUnit.toLowerCase()} to {currentFromUnit.toLowerCase()}, divide the{" "}
+                {currentToUnit.toLowerCase()} value by the conversion factor, or multiply by{" "}
+                {(
+                  1 /
+                  conversionData
+                    .convert(1)
+                    .toFixed(6)
+                    .replace(/\.?0+$/, "")
+                ).toFixed(6)}
+                . You can also use the "Swap Units" button in our calculator above.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                What is the exact conversion factor between {currentFromUnit.toLowerCase()} and{" "}
+                {currentToUnit.toLowerCase()}?
+              </h3>
+              <p className="text-gray-700">
+                The exact conversion factor is{" "}
+                {conversionData
+                  .convert(1)
+                  .toFixed(6)
+                  .replace(/\.?0+$/, "") || "standardized_value"}
+                . This means that 1 {currentFromSymbol} equals {conversionData.convert(1).toFixed(6)} {currentToSymbol}.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Why is this conversion important?</h3>
+              <p className="text-gray-700">
+                Converting between {currentFromUnit.toLowerCase()} and {currentToUnit.toLowerCase()} is essential in
+                many fields including engineering, science, construction, and international trade. Different regions and
+                industries may use different measurement systems, making accurate conversion crucial for communication
+                and precision.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">How accurate is this conversion?</h3>
+              <p className="text-gray-700">
+                Our conversion uses internationally standardized conversion factors, providing accuracy suitable for
+                most practical applications. For scientific or engineering applications requiring extreme precision,
+                always verify with official standards for your specific use case.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                Can I bookmark this converter for future use?
+              </h3>
+              <p className="text-gray-700">
+                Yes! This {currentFromUnit.toLowerCase()} to {currentToUnit.toLowerCase()} converter has a permanent URL
+                that you can bookmark. The page works offline once loaded and provides instant conversions without
+                requiring page refreshes.
+              </p>
+            </div>
+
+            <div className="pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Are there mobile apps for this conversion?</h3>
+              <p className="text-gray-700">
+                This web-based converter is fully responsive and works perfectly on mobile devices. You can add it to
+                your home screen for quick access, and it functions like a native app with fast loading times and
+                offline capability.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Converters */}
+        <section className="bg-white rounded-2xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Converters</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {conversionData.relatedConverters.slice(0, 6).map((converter) => (
+              <Link
+                key={converter.slug}
+                href={`/convert/${converter.slug}`}
+                className="block p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200 hover:border-blue-300 hover:shadow-md transition-all duration-200"
+              >
+                <div className="font-semibold text-blue-900 mb-1">{converter.title}</div>
+                <div className="text-sm text-blue-600">Quick and accurate conversion</div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: `How do I convert ${currentFromUnit.toLowerCase()} to ${currentToUnit.toLowerCase()}?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: `To convert ${currentFromUnit.toLowerCase()} to ${currentToUnit.toLowerCase()}, multiply the ${currentFromUnit.toLowerCase()} value by the conversion factor. Use our calculator for instant results, or apply the formula: ${currentToUnit} = {currentFromUnit} × ${
+                    conversionData
+                      .convert(1)
+                      .toFixed(6)
+                      .replace(/\.?0+$/, "") || "conversion_factor"
+                  }.`,
+                },
+              },
+              {
+                "@type": "Question",
+                name: `How do I convert ${currentToUnit.toLowerCase()} back to ${currentFromUnit.toLowerCase()}?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: `To convert ${currentToUnit.toLowerCase()} to ${currentFromUnit.toLowerCase()}, divide the ${currentToUnit.toLowerCase()} value by the conversion factor, or multiply by {(1 / (conversionData.convert(1).toFixed(6).replace(/\.?0+$/, ""))).toFixed(6)}.`,
+                },
+              },
+              {
+                "@type": "Question",
+                name: `What is the exact conversion factor between ${currentFromUnit.toLowerCase()} and ${currentToUnit.toLowerCase()}?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: `The exact conversion factor is ${
+                    conversionData
+                      .convert(1)
+                      .toFixed(6)
+                      .replace(/\.?0+$/, "") || "standardized_value"
+                  }. This means that 1 {currentFromSymbol} equals {conversionData.convert(1).toFixed(6)} {currentToSymbol}.`,
+                },
+              },
+              {
+                "@type": "Question",
+                name: `Why is this conversion important?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: `Converting between ${currentFromUnit.toLowerCase()} and ${currentToUnit.toLowerCase()} is essential in many fields including engineering, science, construction, and international trade. Different regions and industries may use different measurement systems, making accurate conversion crucial.`,
+                },
+              },
+              {
+                "@type": "Question",
+                name: `How accurate is this conversion?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: `Our conversion uses internationally standardized conversion factors, providing accuracy suitable for most practical applications. For scientific or engineering applications requiring extreme precision, always verify with official standards.`,
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   )
 }
